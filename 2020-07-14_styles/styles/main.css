@@ -1,0 +1,31 @@
+/*div {
+    color:red;
+    background-color: black;
+}*/
+
+/*html {
+    font-size: 1rem;
+}*/
+
+body {
+    font-size: 1.5rem;
+    background-color: green;
+}
+
+#uno {
+    font-size: 1,5em;    
+}
+
+#duo {
+    font-size: 0.5em;
+}
+
+.fst {
+    display: block;
+    background-color: coral;
+    border: solid 1px green;
+    width: 50%;
+    height: 300px;
+    padding: 5px 15px;
+    margin: 10px 0px 20px 10px;
+}

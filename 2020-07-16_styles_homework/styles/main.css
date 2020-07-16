@@ -1,0 +1,15 @@
+button {
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #f3f3f3, 75%, #c2c2c2 );
+    margin: 10px;
+    height: 45px;
+    width: 120px; 
+    box-shadow: 0 0 20px rgba(200, 200, 200, 0.9);
+     
+}
+
+#onbuttondown:active {
+    background: linear-gradient(to top, #f3f3f3, 25%, #c2c2c2 );
+    box-shadow: none;
+    
+}
