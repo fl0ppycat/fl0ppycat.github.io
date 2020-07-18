@@ -1,0 +1,56 @@
+div{
+    width: 280px; height: 280px;
+    border: 1px solid #9999;
+    margin: 30px;
+
+    background-image:
+        linear-gradient(
+        to right,
+        black, black 12.5%,
+        white 12.5%, white 25%,
+        black 25%, black 37.5%,
+        white 37.5%, white 50%,
+        black 50%, black 62.5%,
+        white 62.5%, white 75%,
+        black 75%, black 87.5%,
+        white 87.5%, white 100%),
+    
+        linear-gradient(
+        to top,
+        black, black 12.5%,
+        white 12.5%, white 25%,
+        black 25%, black 37.5%,
+        white 37.5%, white 50%,
+        black 50%, black 62.5%,
+        white 62.5%, white 75%,
+        black 75%, black 87.5%,
+        white 87.5%, white 100%);
+    
+        background-blend-mode: screen;
+}
+
+
+
+/*.outer {
+    width: 280px;
+    height: 280px;
+    background-color: gray;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.inner {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.inner:nth-child(0+2n) {
+    background-color: black;
+}*/
