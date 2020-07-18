@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {list-style-type: none;
+}
+
+.main ul {
+    display: none;
+    position: absolute;    
+}
+
+.main li {
+    display: block;
+    width: 60px;
+    position: relative;
+    border: 1px solid lightgray;
+    text-align: center;   
+    padding: 10px;
+}
+
+.main ul li {
+    position: relative;
+    left: 70px;
+    top: -29.4px;    
+}
+
+.main li:hover ul {
+    display: block; 
+    position: absolute;
+}
