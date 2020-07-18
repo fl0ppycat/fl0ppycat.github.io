@@ -2,12 +2,10 @@ body{
     margin:30px;
 }
 
-div{    
-    border: 3px solid #9999;
-}
+
 
 .outer{
-    width: 280px;
+    width: 240px;
 }
 
 .inner{
