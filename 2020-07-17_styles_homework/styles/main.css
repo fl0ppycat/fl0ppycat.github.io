@@ -1,4 +1,47 @@
-div{
+body{
+    margin:30px;
+}
+
+div{    
+    border: 3px solid #9999;
+}
+
+.outer{
+    width: 280px;
+}
+
+.inner{
+    height: 30px;
+
+    background-image:
+        linear-gradient(
+        to right,
+        black, black 12.5%,
+        white 12.5%, white 25%,
+        black 25%, black 37.5%,
+        white 37.5%, white 50%,
+        black 50%, black 62.5%,
+        white 62.5%, white 75%,
+        black 75%, black 87.5%,
+        white 87.5%, white 100%);  
+}
+
+.inner:nth-child(2n) {
+    background-image:
+        linear-gradient(
+        to left,
+        black, black 12.5%,
+        white 12.5%, white 25%,
+        black 25%, black 37.5%,
+        white 37.5%, white 50%,
+        black 50%, black 62.5%,
+        white 62.5%, white 75%,
+        black 75%, black 87.5%,
+        white 87.5%, white 100%);
+}
+
+/*another attempt to complete the task with 2 90 degrees crossing gradients and blendng mode*/
+/*div{
     width: 280px; height: 280px;
     border: 1px solid #9999;
     margin: 30px;
@@ -27,10 +70,10 @@ div{
         white 87.5%, white 100%);
     
         background-blend-mode: screen;
-}
+}*/
 
 
-
+/*an attempt to complete the task with 8*8=64 div*/
 /*.outer {
     width: 280px;
     height: 280px;
