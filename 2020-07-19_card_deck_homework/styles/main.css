@@ -79,6 +79,9 @@ span {
     background-color: white;
     background-image: none;
     background-blend-mode: normal;
+
+    animation-name: hide;
+    animation-duration: 4s;
 }
 
 .card:hover .back{
@@ -91,3 +94,10 @@ span {
     background-image: none;
     background-blend-mode: normal;
 }  */
+
+@keyframes hide {
+    from { transform: scaleY(0); }
+    to   { transform: scaleY(1); }
+  }
+
+  

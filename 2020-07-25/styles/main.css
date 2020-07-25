@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+
+:root {
+    --button-radius:35px;
+  }
+
+* {  
+    margin: 0px;
+    padding: 0px;
+}
+.main{    
+    width: 980px;
+    height: 800px;
+    background-color: rgba(185,214,239,1);
+}
+.space {
+    position: relative;
+    height: 464px;
+    width: 980px;
+}
+.cloud1{
+    position: absolute;
+    left:131px;
+    color: white;
+}    
+.cloud2{
+    position: absolute;
+    left:530px;
+    color: white;
+}
+.comingsoon {
+    font-family: Roboto;
+    font-size: 72px;
+    font-weight: bold;
+    position: absolute;
+    color: rgba(254,254,254,1);
+    text-align: center;
+    top: 100px;
+    width: 980px;
+    text-shadow: -2px 3px 0px rgba(0, 0, 0, 0.17);}
+
+.subscribe{
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: lighter;
+    position: absolute;
+    color: rgba(37,107,151,1);
+    text-align: center;
+    top: 185px;
+    width: 980px;
+}
+
+form{
+    position: absolute;
+    top: 217px;
+    width: 980px;
+    text-align: center;
+
+}
+.sea-1 {
+    height: 4px;
+    background-color: rgba(221,236,250,1);
+}
+.sea-2 {
+    height: 9px;
+    background-color: rgba(50,125,173,1);
+}
+.sea-3 {
+    height: 100%;
+    background-color: rgba(37,107,151,1);
+}
+.ship{
+    position:absolute;
+    top:452px;
+    left:301px;
+}
+.ice{
+    position:absolute;
+    top:279px;
+    left:326px;
+    width: 329px;
+    height: 490px;
+
+    /* background-image: url("ice.png"), linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 196px, rgba(37,107,151,0.8) 196px, rgba(37,107,151,0.8) 490px ); */
+    background-image: url("ice-2.png");
+
+    /* background-blend-mode: multiply; */
+}
+.button{
+    position: absolute;
+    top: 530px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: rgba(185,214,239,1);
+    color:rgba(38,107,151,1);
+    box-sizing: border-box;
+    padding-top: 23px;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: lighter;
+}
+.btn1{left: 344px;}
+.btn2{left: 457px;}
+.btn3{left: 566px;}
+.button p{
+    color:rgba(243,243,243,1);
+    margin-top: 25px;
+    font-weight: bold;
+    font-stretch: wider;
+}
+
+
+  

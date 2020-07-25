@@ -1,0 +1,47 @@
+.first-level-wrap, .first-level-wrap .second-level-wrap, .first-level-wrap li {
+    margin: 0;
+    padding: 0;
+  }
+  .first-level-wrap, .first-level-wrap .second-level-wrap {
+    background: rgb(46,95,122);
+  }
+  .first-level-wrap { /* подменю перемещается относительно меню */
+    position: relative;
+    display: table;
+    width: 100%;
+  }
+  .first-level-wrap .second-level-wrap { /* подменю находится вне потока */
+    position: absolute;
+    z-index: 5;
+    display: none;
+  }
+  .first-level-wrap li:hover .second-level-wrap { /* подменю будет показано, если курсор наведён на пункт меню с выпадающем списком */
+    display: block;
+  }
+  .first-level-wrap li {
+    display: table-cell;
+    text-align: center;
+  }
+  .first-level-wrap .second-level-wrap li {
+    display: block;
+    text-align: left;
+  }
+  .first-level-wrap .right { /* последнее подменю будет расширяться справа налево */
+    direction: rtl;
+  }
+
+  .first-level-wrap .right li { /* последнее подменю будет расширяться справа налево, но не пункты последнего подменю */
+    direction: ltr;
+  }
+  .first-level-wrap a {
+    display: block;
+    padding: 3px 0;
+    color: #fff;
+    text-decoration: none;
+  }
+  .first-level-wrap .second-level-wrap a {
+    padding: 3px 15px;
+  }
+  .first-level-wrap li:hover {
+    background: rgb(96,145,172);
+  }

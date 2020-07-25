@@ -1,0 +1,102 @@
+:root {
+    --header-height: 60px;
+    --block-height: 20px;
+  }
+
+body {
+    background-color:   rgb(100, 100, 100);
+}
+
+span {
+    border: 1px solid violet;
+    display: block; 
+} 
+
+.content {
+    position:           absolute;
+    width:              80%;
+    margin:             20px;
+    z-index:            -1;
+    display: none;
+}
+
+.header {
+    position:           relative;
+    height:             60px;
+    background-color:   rgba(50, 50, 50, 1);
+}
+
+.logo {
+    position:           absolute;    
+    width:              45px;
+    vertical-align:     middle;
+    background-image:   url(../images/logo.png);
+    background-size:    cover;
+    left: 10px;
+    top:                0;
+    bottom:             0;
+    margin:             auto;
+    max-height:         100%;
+}
+
+.first-level-wrap {
+    position:           relative;
+    display:            block;
+    float:              right;
+    border:             1px solid yellow;
+}
+
+.first-level-item {
+    position:           relative;
+    display:table-cell; 
+    vertical-align:middle;
+    text-align:center;
+
+    color:              lightgray;
+    font:               12pt sans-serif;
+    border:             1px solid red;
+    height: 56px;
+    padding: 18px;
+    box-sizing: border-box;
+}
+
+/* .second-level-wrap{
+    position:           absolute;    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 0px;
+} */
+
+.second-level-wrap{
+    position:           absolute;
+    display:            table;
+    border:             1px solid white;
+}
+
+
+.second-level-item{
+    display:none;
+    position: absolute;
+    float: left;
+}
+
+.first-line {
+    top:               10px;;
+    border:             2px solid blue;}
+.second-line {
+    top:                30px;
+    border:             2px solid orangered;}
+.third-line {
+    top:                50px;
+    border:             2px solid red;}
+.fourth-line {
+    top:                70px;
+    border:             2px solid green;}
+
+.first-level-item:hover .second-level-item{ 
+    display: table-cell;
+
+    /* position: absolute; */
+} 
+
