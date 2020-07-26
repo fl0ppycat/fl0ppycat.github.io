@@ -1,32 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
 
-:root {
-    --button-radius:35px;
-  }
-
 * {  
     margin: 0px;
     padding: 0px;
 }
 .main{    
-    width: 980px;
+    width: 100%;
     height: 800px;
     background-color: rgba(185,214,239,1);
+    margin: 0 auto;
 }
 .space {
     position: relative;
     height: 464px;
-    width: 980px;
+    width: 100%px;
+    margin: 0 auto;
+}
+.clouds{
+    position: absolute;
+    left: 50%;
 }
 .cloud1{
-    position: absolute;
-    left:131px;
-    color: white;
+    transform: translateX(-359px);
 }    
 .cloud2{
-    position: absolute;
-    left:530px;
-    color: white;
+    transform: translateX(40px);
+
 }
 .comingsoon {
     font-family: Roboto;
@@ -36,10 +35,11 @@
     color: rgba(254,254,254,1);
     text-align: center;
     top: 100px;
-    width: 980px;
     transform: scaleY(0.9);
-    text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.17);}
-    
+    text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.17);
+    width: 100%;
+    margin: 0 auto;
+}
 
 .subscribe{
     font-family: Roboto;
@@ -51,29 +51,33 @@
     top: 185px;
     width: 980px;
     transform: scale(1.05, 0.98);
-
+    width: 100%;
+    margin: 0 auto;
 }
 
 form{
     position: absolute;
     top: 217px;
-    width: 980px;
     text-align: center;
+    width: 100%;
+    margin: 0 auto;
 }
 input[type=text]{  
     width: 240px;
     height: 37px;
     border-style: none;
     box-sizing: border-box;
-    margin-right: 8px;
+    margin-right: 7px;
     box-shadow:         0px 1px 0px 0px rgba(255, 255, 255, 1),
     inset  0px 2px 5px 0px  rgba(0,0,0,0.2),
     inset  0px 0px 2px 0px  rgba(0,0,0,0.1);      
     border-radius: 4px;
     resize: none;
+    padding: 7px;
+    padding-left: 11px;
 }
 input[type=submit]{  
-    width: 90px;
+    width: 92px;
     height: 36px;
     border-radius: 4px;
     border: 1px solid rgba(247,163,38,1);  
@@ -103,41 +107,63 @@ input::placeholder{
     color: #808080;
     font-family: Roboto;
     font-weight: lighter;
-    padding: 10px;
+    
 }
 
 .sea-1 {
     height: 4px;
     background-color: rgba(221,236,250,1);
+    width: 100%;
+    margin: 0 auto;
 }
 .sea-2 {
     height: 9px;
     background-color: rgba(50,125,173,1);
+    width: 100%;
+    margin: 0 auto;
 }
 .sea-3 {
     height: 100%;
     background-color: rgba(37,107,151,1);
+    width: 100%;
+    margin: 0 auto;
 }
 .ship{
     position:absolute;
     top:452px;
-    left:301px;
+    width: 48px;
+    /* left: 31%; */
+
+    left: 50%;
+    transform: translateX(-189px);
 }
 .ice{
-    position:absolute;
-    top:279px;
-    left:326px;
+    position:absolute;  
     width: 329px;
     height: 490px;
+    left: 50%;
+    transform: translateX(-50%);
+    top:279px;
 
     /* background-image: url("ice.png"), linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 196px, rgba(37,107,151,0.8) 196px, rgba(37,107,151,0.8) 490px ); */
     background-image: url("ice-2.png");
 
     /* background-blend-mode: multiply; */
+
 }
-.button{
+
+.buttons{
+    /* border: 3px solid red; */
     position: absolute;
     top: 530px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.button{
+    /* border: 3px solid purple; */
+    position: relative;
+    display: inline-block;
     height: 70px;
     width: 70px;
     border-radius: 50%;
@@ -149,10 +175,9 @@ input::placeholder{
     font-family: Roboto;
     font-size: 24px;
     font-weight: lighter;
+    margin: 0px 19px;
 }
-.btn1{left: 344px;}
-.btn2{left: 457px;}
-.btn3{left: 566px;}
+
 .button p{
     color:rgba(243,243,243,1);
     margin-top: 25px;
@@ -160,5 +185,5 @@ input::placeholder{
     font-stretch: wider;
 }
 
-
+.btn2 p{transform: translateX(-5px);}
   
