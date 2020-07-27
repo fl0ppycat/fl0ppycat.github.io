@@ -1,29 +1,30 @@
-:root {
-    --header-height: 60px;
-    --block-height: 20px;
-  }
+*{
+    margin:     0;
+    padding:    0;
+}
 
 body {
-    background-color:   rgb(100, 100, 100);
+    background-color:  #999;
 }
 
 span {
-    border: 1px solid violet;
-    display: block; 
+    position:           relative;
+    background-color:   rgba(80, 80, 80, 1);
+    padding:            15px;
+    float:              left;
 } 
 
 .content {
     position:           absolute;
-    width:              80%;
-    margin:             20px;
+    margin:             80px 20px;
     z-index:            -1;
-    display: none;
 }
 
 .header {
-    position:           relative;
+    position:           absolute;
     height:             60px;
     background-color:   rgba(50, 50, 50, 1);
+    width: 100%;
 }
 
 .logo {
@@ -32,7 +33,7 @@ span {
     vertical-align:     middle;
     background-image:   url(../images/logo.png);
     background-size:    cover;
-    left: 10px;
+    left:               10px;
     top:                0;
     bottom:             0;
     margin:             auto;
@@ -43,60 +44,53 @@ span {
     position:           relative;
     display:            block;
     float:              right;
-    border:             1px solid yellow;
 }
 
 .first-level-item {
     position:           relative;
-    display:table-cell; 
-    vertical-align:middle;
-    text-align:center;
-
+    display:            inline-block; 
+    vertical-align:     middle;
+    text-align:         center;
     color:              lightgray;
     font:               12pt sans-serif;
-    border:             1px solid red;
-    height: 56px;
-    padding: 18px;
-    box-sizing: border-box;
+    height:             56px;
+    padding:            18px;
+    box-sizing:         border-box;
 }
-
-/* .second-level-wrap{
-    position:           absolute;    
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    grid-gap: 0px;
-} */
 
 .second-level-wrap{
     position:           absolute;
-    display:            table;
-    border:             1px solid white;
 }
 
 
 .second-level-item{
-    display:none;
-    position: absolute;
-    float: left;
+    display:            none;
+    position:           absolute;
+    width:              300px;
 }
 
 .first-line {
     top:               10px;;
-    border:             2px solid blue;}
+    /* border:             2px solid blue; */
+}
 .second-line {
-    top:                30px;
-    border:             2px solid orangered;}
+    top:                58px;
+    /* border:             2px solid orangered; */
+}
 .third-line {
-    top:                50px;
-    border:             2px solid red;}
+    top:                106px;
+    /* border:             2px solid red; */
+}
 .fourth-line {
-    top:                70px;
-    border:             2px solid green;}
+    top:                154px;
+    /* border:             2px solid green; */
+}
 
 .first-level-item:hover .second-level-item{ 
-    display: table-cell;
+    display: unset;
+}
 
-    /* position: absolute; */
-} 
+span:hover::before {
+    content:"☂";
+}
 
