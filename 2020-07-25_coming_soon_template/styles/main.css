@@ -1,19 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
 
-* {  
-    margin: 0px;
-    padding: 0px;
+
+@font-face {
+    font-family:    "Houshka Pro Bold";
+    src:            url("../fonts/HouschkaPro-Bold.otf");
+}
+
+@font-face {
+    font-family:    "Houshka Pro Medium";
+    src:            url("../fonts/HouschkaPro-Medium.otf");
+}
+
+body {  
+    background-color:  rgba(37,107,151,1);
+    overflow: hidden;
 }
 .main{    
     width: 100%;
-    height: 800px;
     background-color: rgba(185,214,239,1);
     margin: 0 auto;
 }
 .space {
     position: relative;
     height: 464px;
-    width: 100%px;
+    width: 100%;
     margin: 0 auto;
 }
 .clouds{
@@ -28,29 +38,26 @@
 
 }
 .comingsoon {
-    font-family: Roboto;
-    font-size: 72px;
-    font-weight: bold;
+    font-family: "Houshka Pro Bold";
+    font-size: 74px;
     position: absolute;
     color: rgba(254,254,254,1);
     text-align: center;
-    top: 100px;
-    transform: scaleY(0.9);
+    top: 102px;
     text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.17);
     width: 100%;
     margin: 0 auto;
+    letter-spacing: -1.5px;
+    padding-left: 13px;
 }
 
 .subscribe{
-    font-family: Roboto;
+    font-family: "Houshka Pro Medium";
     font-size: 14px;
-    font-weight: lighter;
     position: absolute;
     color: rgba(37,107,151,1);
     text-align: center;
     top: 185px;
-    width: 980px;
-    transform: scale(1.05, 0.98);
     width: 100%;
     margin: 0 auto;
 }
@@ -86,12 +93,11 @@ input[type=submit]{
     /* background-image: linear-gradient(to bottom, rgba(255,255,255, 0.3) 20%, rgba(0,0,0,0.3) 100%); */
     background-image: linear-gradient(to bottom, rgba(255,255,255, 0.3),  rgba(0,0,0,0.3) 75%,  rgba(0,0,0,0.3) 100%);
     background-blend-mode: overlay;
-    font-family: Roboto;
-    font-size: 13.2px;
+    font-family: "Houshka Pro Bold";
+    font-size: 14px;
     font-weight: bold;
-    font-stretch: expanded;
     text-shadow: rgba(29, 26, 22, 0.20) 0px 1px 2px;
-
+    
     /*не работает border-image + border-radius*/
     /* border-radius: 4px;
     border-width: 1px;
@@ -107,7 +113,8 @@ input::placeholder{
     color: #808080;
     font-family: Roboto;
     font-weight: lighter;
-    
+    padding: 2px;
+    letter-spacing: 0.15px;    
 }
 
 .sea-1 {
@@ -132,10 +139,9 @@ input::placeholder{
     position:absolute;
     top:452px;
     width: 48px;
-    /* left: 31%; */
-
-    left: 50%;
-    transform: translateX(-189px);
+    left: 36.3%;
+    /* left: 50%;
+    transform: translateX(-189px); */
 }
 .ice{
     position:absolute;  
@@ -146,14 +152,13 @@ input::placeholder{
     top:279px;
 
     /* background-image: url("ice.png"), linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 196px, rgba(37,107,151,0.8) 196px, rgba(37,107,151,0.8) 490px ); */
-    background-image: url("ice-2.png");
+    background-image: url("../images/ice-2.png");
 
     /* background-blend-mode: multiply; */
 
 }
 
 .buttons{
-    /* border: 3px solid red; */
     position: absolute;
     top: 530px;
     left: 50%;
@@ -161,7 +166,6 @@ input::placeholder{
 }
 
 .button{
-    /* border: 3px solid purple; */
     position: relative;
     display: inline-block;
     height: 70px;
@@ -170,20 +174,40 @@ input::placeholder{
     background-color: rgba(185,214,239,1);
     color:rgba(38,107,151,1);
     box-sizing: border-box;
-    padding-top: 23px;
+    padding-top: 25px;
     text-align: center;
-    font-family: Roboto;
+    font-family: "Houshka Pro Medium";
     font-size: 24px;
     font-weight: lighter;
-    margin: 0px 19px;
+    margin: 0px 18px;
 }
 
 .button p{
     color:rgba(243,243,243,1);
-    margin-top: 25px;
+    margin-top: 27px;
+    font-family: "Houshka Pro Bold";
     font-weight: bold;
-    font-stretch: wider;
 }
 
 .btn2 p{transform: translateX(-5px);}
+
+.up-down-animation {
+    animation-duration: 2s;
+    animation-name: up-down;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+  @keyframes up-down {
+    from {
+        top:450px;
+        transform: rotate(8deg);
+    }
+    
+    to {
+        top:456px;
+        transform: rotate(-8deg);
+    }
+  }
+
   
