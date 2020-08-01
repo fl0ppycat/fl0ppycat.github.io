@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
 
+*{font-family: Roboto;}
+
 body{
     background: #F6F7FB;
 }
 .main {
     position: relative;
     width: 95vw;
-    border: 2px solid darkgreen;
-    margin: 38px auto;
+    /* border: 2px solid darkgreen; */
+    margin: 0 auto;
 
 }
 .header{
@@ -59,7 +61,10 @@ body{
     border-radius: 5px;
     color:#FFFFFF;
 }
-
+.gray-text{
+    /* color:rgba(130, 130, 130, 1); */
+    opacity: 0.3;
+}
 .account{
     margin-left: auto;
     display: flex;
@@ -76,6 +81,12 @@ body{
 }
 .username{
     line-height: 48px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    /* line-height: 16px; */
+    /* identical to box height */
+    color: #828282;
 }
 
 .title-rates{
@@ -89,7 +100,7 @@ body{
     align-items: center;
     justify-content: flex-start;
     
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 }
 .title{
     position: relative;
@@ -97,7 +108,7 @@ body{
     width: fit-content;
     margin-right: 10px;
 
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
     font-family: Roboto;
     font-style: normal;
@@ -112,9 +123,22 @@ body{
 .rates{
     position: relative;
 
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 
     margin: 0 10px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.01em;
+
+        color: #000000;
+
+        opacity: 0.3;
 }
 .rates.first {
     margin-left: 50px;;
@@ -126,16 +150,26 @@ body{
     width: 187px;
     height: 40px;
 
-    text-align: center;
-    line-height: 40px;
+    /* text-align: center;
+    line-height: 40px; */
 
     background: linear-gradient(270deg, #162970 0%, #255390 99.28%);
     box-shadow: 0px 8px 10px rgba(60, 84, 117, 0.15);
     border-radius: 20px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    /* line-height: 15px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    color: #FFFFFF;
 }
 
 .monitoring{
-    border: 1px solid orangered;
+    /* border: 1px solid orangered; */
 
     width: 100%;
     display: flex;
@@ -160,13 +194,21 @@ body{
     margin-bottom:  35px;
     margin-right: 26px; 
 
-    border: 1px solid purple; 
+    /* border: 1px solid purple;  */
 }
-
+.monitoring-block.first{
+    background: #FFFFFF;
+    /* border: 2px solid #F2AE4B; */
+    box-sizing: border-box;
+    box-shadow: 0px 8px 10px rgba(60, 84, 117, 0.15);
+    border-radius: 5px;
+}
 .monitoring-main{
     height: 113px;
 
-    border: 1px solid red;
+    box-sizing: border-box;
+
+    /* border: 1px solid red; */
 
     padding: 16px 23px;
 
@@ -185,6 +227,9 @@ body{
 
 .monitoring-button{
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 
     width: 290px;
     height: 36px;
@@ -197,7 +242,7 @@ body{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
     border-radius: 5px;
 
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .monitor-title{
@@ -217,7 +262,7 @@ body{
     line-height: 28px;
     /* identical to box height */
     color: #000000;
-    margin:  20px 0;
+    margin:  10px 0;
 }
 .monitor-sum{
     font-family: Roboto;
@@ -237,7 +282,36 @@ body{
     width: 24px;
     height: 24px;
     margin-left:auto;
+    margin-bottom: auto;
+}
+.monitor-logo.first{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #929292;
+    box-sizing: border-box;
+    border-radius: 50%;
+    text-align: center;
+    color: #929292;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        
+        color: #828282;
+}
+.mhs{
+    font-size: 14px;
 }
 .autopurchase{
-    
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height */
+
+
+    color: #4F4F4F;    
 }
