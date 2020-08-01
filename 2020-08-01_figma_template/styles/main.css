@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+
+body{
+    background: #F6F7FB;
+}
+.main {
+    position: relative;
+    width: 95vw;
+    border: 2px solid darkgreen;
+    margin: 38px auto;
+
+}
+.header{
+    position: relative;
+    
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 89px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+}
+.button-header{
+    position: relative;
+    margin: auto 10px; 
+   
+    width: 212.94px;
+    height: 49px;
+
+    background: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    /* text-align: center;
+    line-height: 48px; */
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        /* line-height: 16px; */
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: #000000;
+}
+
+.button-header.first{
+    height: 48px;
+    margin-left: 0;
+    background: linear-gradient(270deg, #162970 0%, #255390 99.28%);
+    box-shadow: 0px 8px 10px rgba(60, 84, 117, 0.15);
+    border-radius: 5px;
+    color:#FFFFFF;
+}
+
+.account{
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+}
+.avatar{
+    width: 45px;
+    height: 45px;
+
+    margin: 0 10px;
+
+    background: url(..//images/avatar.jpg);
+    border-radius: 320px;
+}
+.username{
+    line-height: 48px;
+}
+
+.title-rates{
+    position: relative;
+    width: 100%;
+    height: 90px;
+    margin: 0 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    
+    border: 1px solid purple;
+}
+.title{
+    position: relative;
+
+    width: fit-content;
+    margin-right: 10px;
+
+    border: 1px solid red;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 29px;
+    /* identical to box height */
+
+    letter-spacing: 0.01em;
+    color: #000000;   
+}
+.rates{
+    position: relative;
+
+    border: 1px solid purple;
+
+    margin: 0 10px;
+}
+.rates.first {
+    margin-left: 50px;;
+  }
+.button-round{
+    box-sizing: border-box;
+    margin-left: auto;
+    
+    width: 187px;
+    height: 40px;
+
+    text-align: center;
+    line-height: 40px;
+
+    background: linear-gradient(270deg, #162970 0%, #255390 99.28%);
+    box-shadow: 0px 8px 10px rgba(60, 84, 117, 0.15);
+    border-radius: 20px;
+}
+
+.monitoring{
+    border: 1px solid orangered;
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;  
+
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.monitoring-block{
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+
+    /* align-items: center; */
+    justify-content: flex-end;
+
+    width: 290px;
+
+    margin-bottom:  35px;
+    margin-right: 26px; 
+
+    border: 1px solid purple; 
+}
+
+.monitoring-main{
+    height: 113px;
+
+    border: 1px solid red;
+
+    padding: 16px 23px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;  
+
+    align-items: flex-start;
+    justify-content: space-around;
+
+}
+
+.monitoring-button{
+    position: relative;
+
+    width: 290px;
+    height: 36px;
+
+    margin-top: 13px;
+
+    background: #FFFFFF;
+    border: 1px solid #F2F2F2;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
+    border-radius: 5px;
+
+    border: 1px solid blue;
+}
+
+.monitor-title{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    color: #000000;
+}
+.monitor-speed{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    /* identical to box height */
+    color: #000000;
+    margin:  20px 0;
+}
+.monitor-sum{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #4F4F4F;
+}
+.monitor-graph{
+    width: 105px;
+    height: 43px;
+    margin-left:auto;
+    background: url(..//images/graph.png);
+}
+.monitor-logo{
+    width: 24px;
+    height: 24px;
+    margin-left:auto;
+}
+.autopurchase{
+    
+}
