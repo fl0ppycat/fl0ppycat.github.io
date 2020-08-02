@@ -50,13 +50,9 @@ body{
     box-sizing: border-box;
     border-radius: 5px;
 
-    /* text-align: center;
-    line-height: 48px; */
-
         font-style: normal;
         font-weight: bold;
         font-size: 14px;
-        /* line-height: 16px; */
 
         display: flex;
         flex-direction: row;
@@ -220,16 +216,27 @@ opacity: 0.3;
     /* line-height: 15px; */
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 
     color: #FFFFFF;
 }
+.button-round::before{
+    content: "+";
+    font-size: large;
+    /* font-weight: 500; */
+    margin-right: 20px;
+}
 
-.monitoring{
-    /* border: 1px solid orangered; */
 
+
+
+
+.section{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;  
+}
+.section#one{
     flex-direction: row;
     flex-wrap: wrap;  
 
@@ -237,22 +244,21 @@ opacity: 0.3;
     justify-content: flex-start;
 }
 
-.monitoring-block{
-    position: relative;
-    
+.quater-section{
+    position: relative;   
     display: flex;
-    flex-direction: column;
 
-    /* align-items: center; */
-    justify-content: flex-end;
-
-    width: 290px;
-
-    margin-bottom:  35px;
-    margin-right: 26px; 
-
-    /* border: 1px solid purple;  */
+    margin-bottom:  33px;
+    margin-right: 27px; 
 }
+.section#one .quater-section{
+    width: 290px;
+    /* height: unset; */
+    /* border: 3px solid yellow; */
+    flex-direction: column;
+    justify-content: flex-end;
+} 
+
 .monitoring-main{
     height: 113px;
 
@@ -290,6 +296,7 @@ opacity: 0.3;
     width: 290px;
     height: 36px;
 
+    padding: 0 20px;
     margin-top: 13px;
 
     background: #FFFFFF;
@@ -318,8 +325,9 @@ opacity: 0.3;
 .buy-sell-button{
     width: 138px;
     height: 100%;
-
-    background: #00D56E;
+ 
+    background: center no-repeat #00D56E;
+    background-image: url("../images/button-buy-sell.png");
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
     border-radius: 5px;
 }
@@ -342,6 +350,24 @@ opacity: 0.3;
     /* identical to box height */
     color: #000000;
     margin:  10px 0;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+.ico-monitor{
+    width: 15px;
+    height: 18px;
+    margin-right: 10px;
+    background-size: contain;
+    filter: hue-rotate(180deg) brightness(0.75);
+}
+/* .ico-monitor.ico-speed{
+    border: 1px solid red;
+} */
+.mhs{
+    font-size: 0.8rem;
+    margin-left: 5px;
 }
 .monitor-sum{
     font-family: Roboto;
@@ -380,16 +406,185 @@ opacity: 0.3;
         
         color: #828282;
 }
-.mhs{
-    font-size: 0.8rem;
+
+.checkbox-enabled{
+        width: 14px;
+        height: 15px;
+        background: center / contain no-repeat url(..//images/ellipse-1.png), center no-repeat url(..//images/ellipse-2.png) ;    
 }
+.checkbox-disabled{
+        width: 14px;
+        height: 15px;
+        background: center / contain no-repeat url(..//images/ellipse-1.png) ;
+}
+.checkbox-no-box{
+        width: 14px;
+        height: 15px;
+        background: center  no-repeat url(..//images/ellipse-2.png) ;
+        margin-right: 5px;
+}    
 .autopurchase{
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
     /* identical to box height */
-
-
     color: #4F4F4F;    
+}
+
+
+
+
+.secion,#two{
+    margin-bottom: 40px;
+}
+.summary{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;  
+
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    margin-right: 30px;
+}
+.sum-title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height */
+    color: #828282;
+}
+.sum{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;  
+    align-items: center;
+    justify-content: flex-start;
+}
+.sum span.mhs{
+    font-weight: normal;
+    color: #828282;
+}
+.sum .checkbox-no-box.green{
+    filter: hue-rotate(270deg) brightness(2); 
+}
+.sum .checkbox-no-box.blue{
+    filter: brightness(2);
+}
+.sum .checkbox-no-box.orange{
+    filter: hue-rotate(150deg) brightness(3) /*saturate(1.5)*/; 
+}    
+
+
+
+/* .secion,#three{
+
+} */
+.section#three .quater-section{
+    padding: 16px 23px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
+    border-radius: 5px;
+} 
+.quater-title{
+    position: absolute;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+    color: #828282;
+    margin-top: -45px;
+    margin-bottom: 10px;
+    left: -0px; /* O_____o ??? */
+}
+.section#three .quater-section#accruals-n-balance{
+    width: 915px;
+    height: 289px;
+    background: center / contain no-repeat url(..//images/graph-ballance.png),  #FFFFFF;
+}
+ 
+.section#three .quater-section#prediction{
+    flex-direction: column;
+    /* height: 289px; */
+}
+
+.section#three>.quater-section#prediction>.quater-title{
+    /*Прогноз доходности*/
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    color: #828282;
+}
+.section#three>.quater-section#prediction>.summary>.quater-title{
+    /*День-Неделя-Месяц-Год*/
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #BDBDBD;
+
+    left:28px;
+    margin-top: -20px;
+}
+.section#three .quater-section#prediction .summary{
+    margin-bottom: 20px;
+    margin-top: 24px;
+    margin-right: 0;
+}
+
+
+.section#three div#statistic,.section#three div#my-contracts{
+    flex-direction: column;
+    height: 289px;
+    background: none;
+    border: 3px solid red;
+}
+
+.section#three div#statistic .header-inside{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 41px;
+    padding: 0 0;
+    background: none;
+    box-shadow: none;
+}
+
+.button-header-inside{
+    width: 111px;
+    height: 100%;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    margin-right: 30px;
+
+    text-align: center;
+    line-height: 41px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    /* line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center; */
+    color: #A3A3A3;
+}
+.table-inside{
+    display:flex;
+    flex-direction: row;
+}
+.table-inside-column{
+    display:flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+.table-inside>.table-inside-column>span{
+    margin: 19px 0;
 }

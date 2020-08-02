@@ -13,10 +13,10 @@
 <body>
 
     <div class="header">
-        <div class="button-header first"><img class="ico-button ico-speed"></img><span>МОЯ ФЕРМА</span></div>
-        <div class="button-header"><img class="ico-button ico-user"></img><span>АККАУНТ</span></div>
-        <div class="button-header"><img class="ico-button ico-settings"></img><span>НАСТРОЙКИ</span></div>
-        <div class="button-header"><img class="ico-button ico-info"></img><span>ПОМОЩЬ</span></div>
+        <div class="button-header first"><div class="ico-button ico-speed"></div><span>МОЯ ФЕРМА</span></div>
+        <div class="button-header"><div class="ico-button ico-user"></div><span>АККАУНТ</span></div>
+        <div class="button-header"><div class="ico-button ico-settings"></div><span>НАСТРОЙКИ</span></div>
+        <div class="button-header"><div class="ico-button ico-info"></div><span>ПОМОЩЬ</span></div>
         
         <div class="account">
             <div class="avatar"></div>
@@ -33,16 +33,16 @@
            <div class="rates first"><div class="ico-rates ico-ltc"></div><span class="font-size-18px">LTC</span><span>$160,43</span></div>
            <div class="rates"><div class="ico-rates ico-btc"></div><span class="font-size-18px">BTC</span><span>$8 545,00</span></div>
            <div class="rates"><div class="ico-rates ico-eth"></div><span class="font-size-18px">ETH</span><span>$533,00</span></div>
-           <div class="button-round">+ Добавить валюту</div>
+           <div class="button-round">Добавить валюту</div>
         </div>
 
-        <div class="monitoring">
+        <div class="section" id="one">
 
-            <div class="monitoring-block">
+            <div class="quater-section">
                 <div class="monitoring-main first">
                     <div class="monitor-info">
                         <div class="monitor-title"><span class="gray-30percents">Суммарный баланс</span></div>
-                        <div class="monitor-speed">1.245008<span class="mhs"> BTC</span></div>
+                        <div class="monitor-speed"><div class="checkbox-no-box"></div>1.245008<span class="mhs"> BTC</span></div>
                         <div class="monitor-sum">15 678 USD</div>
                     </div>
                     <div class="ico-currency-logo first">?</div>
@@ -54,82 +54,82 @@
             </div>
             
         
-            <div class="monitoring-block">
+            <div class="quater-section">
                 <div class="monitoring-main">
-                    <div class="monitor-info"> <!-- useless class -->
+                    <div class="monitor-info"> <!-- seems like useless class -->
                         <div class="monitor-title">Litecoin <span class="gray-30percents">LTC</span></div>
-                        <div class="monitor-speed">24 <span class="mhs">MH/S</span></div>
+                        <div class="monitor-speed"><div class="ico-monitor ico-speed"></div>24 <span class="mhs">MH/S</span></div>
                         <div class="monitor-sum">0.15000000 LTC</div>
                     </div> <!-- useless class -->
                     <div class="ico-currency-logo"><img src="./images/logo-currency-litecoin.png"><img></div>   
                     <div class="monitor-graph"></div>
                 </div>
                 <div class="monitoring-button">
-                    <div class="checkbox"></div>
+                    <div class="checkbox-enabled"></div>
                     <div class="autopurchase">Автопокупка хешрейта (3 Mh/s)</div>
                 </div>
             </div>
 
-            <div class="monitoring-block">
+            <div class="quater-section">
                 <div class="monitoring-main">
                     <div class="monitor-info">
                         <div class="monitor-title">Bitcoin <span class="gray-30percents">LTC</span></div>
-                        <div class="monitor-speed">24 <span class="mhs">MH/S</span></div>
+                        <div class="monitor-speed"><div class="ico-monitor ico-speed"></div>24 <span class="mhs">MH/S</span></div>
                         <div class="monitor-sum">0.15000000 LTC</div>
                     </div>   
                     <div class="ico-currency-logo"><img src="./images/logo-currency-bitcoin.png"><img></div>   
                     <div class="monitor-graph"></div>
                 </div>
                 <div class="monitoring-button">
-                    <div class="checkbox"></div>
+                    <div class="checkbox-disabled"></div>
                     <div class="autopurchase">Автопокупка хешрейта (10 Mh/s)</div>
                 </div>
             </div>
 
-            <div class="monitoring-block">
+            <div class="quater-section">
                 <div class="monitoring-main">
                     <div class="monitor-info">
                         <div class="monitor-title">Etherium <span class="gray-30percents">ETH</span></div>
-                        <div class="monitor-speed">24 <span class="mhs">MH/S</span></div>
+                        <div class="monitor-speed"><div class="ico-monitor ico-speed"></div>24 <span class="mhs">MH/S</span></div>
                         <div class="monitor-sum">0.15000000 LTC</div>
                     </div>   
                     <div class="ico-currency-logo"><img src="./images/logo-currency-etherium.png"><img></div>   
                     <div class="monitor-graph"></div>
                 </div>
                 <div class="monitoring-button">
-                    <div class="checkbox"></div>
+                    <div class="checkbox-enabled"></div>
                     <div class="autopurchase">Автопокупка хешрейта (5 Mh/s)</div>
                 </div>
             </div>
 
-            <div class="monitoring-block">
+            <div class="quater-section">
                 <div class="monitoring-main">
                     <div class="monitor-info">
                         <div class="monitor-title">Dash <span class="gray-30percents">DASH</span></div>
-                        <div class="monitor-speed">0 <span class="mhs">MH/S</span></div>
+                        <div class="monitor-speed"><div class="ico-monitor ico-speed"></div>0 <span class="mhs">MH/S</span></div>
                         <div class="monitor-sum">0.00000000 DASH</div>
                     </div>   
                     <div class="ico-currency-logo"><img src="./images/logo-currency-dash.png"><img></div>   
                     <div class="monitor-graph"></div>
                 </div>
                 <div class="monitoring-button">
-                    <div class="checkbox"></div>
+                    <div class="checkbox-enabled"></div>
                     <div class="autopurchase">Автопокупка хешрейта (3 Mh/s)</div>
                 </div>
             </div>
 
-            <div class="monitoring-block">
+            <div class="quater-section">
                 <div class="monitoring-main">
                     <div class="monitor-info">
                         <div class="monitor-title">Monero <span class="gray-30percents">XMR</span></div>
-                        <div class="monitor-speed">24 <span class="mhs">MH/S</span></div>
+                        <div class="monitor-speed"><div class="ico-monitor ico-speed"></div>24 <span class="mhs">MH/S</span></div>
                         <div class="monitor-sum">0.15000000 LTC</div>
                     </div>
                     <div class="ico-currency-logo"><img src="./images/logo-currency-monero.png"><img></div>   
                     <div class="monitor-graph"></div>
                 </div>
                 <div class="monitoring-button">
-                    <div class="checkbox"></div>
+                    <div class="checkbox-disabled"></div>
                     <div class="autopurchase">Автопокупка хешрейта (10 Mh/s)</div>
                 </div>
             </div>
@@ -137,9 +137,105 @@
         </div>    
             
             
+    <div class="section" id="two">
+        <div class="summary">
+            <div class="sum-title">Общий баланс</div>
+            <div class="sum"><div class="checkbox-no-box green"></div><div class="monitor-speed">1.245<span class="mhs"> BTC</span></div></div>
+        </div>
+        <div class="summary">
+            <div class="sum-title">Начисления</div>
+            <div class="sum"><div class="checkbox-no-box blue"></div><div class="monitor-speed">0.113<span class="mhs"> BTC</span></div></div>
+        </div>
+        <div class="summary">
+            <div class="sum-title">Обслуживание</div>
+            <div class="sum"><div class="checkbox-no-box orange"></div><div class="monitor-speed">0.087<span class="mhs"> BTC</span></div></div>
+        </div>
+    </div>
 
+
+    <div class="section" id="three">
+        
+        <div class="quater-section" id="accruals-n-balance">
+            <div class="quater-title">Начисления и баланс</div>
+        </div>
+
+        <div class="quater-section" id="prediction">
+            <div class="quater-title">Прогноз доходности</div>
+            
+                <div class="summary">
+                    <div class="quater-title">День</div>
+                    <div class="sum"><div class="checkbox-no-box blue"></div><div class="monitor-sum">0.000000 BTC = 0.00 USD</div></div>
+                </div>
+                <div class="summary">
+                    <div class="quater-title">Неделя</div>
+                    <div class="sum"><div class="checkbox-no-box blue"></div><div class="monitor-sum">0.000000 BTC = 0.00 USD</div></div>
+                </div>
+                <div class="summary">
+                    <div class="quater-title">Месяц</div>
+                    <div class="sum"><div class="checkbox-no-box blue"></div><div class="monitor-sum">0.000000 BTC = 0.00 USD</div></div>
+                </div>
+                <div class="summary">
+                    <div class="quater-title">Год</div>
+                    <div class="sum"><div class="checkbox-no-box blue"></div><div class="monitor-sum">0.000000 BTC = 0.00 USD</div></div>
+                </div>
+
+        </div>
+
+        <div class="quater-section" id="statistic">
+            <div class="quater-title">Статистика аккаунта</div>
+            <div class="quater-section header-inside">
+                <div class="button-header-inside"><span>All</span></div>
+                <div class="button-header-inside"><span>Rewards</span></div>
+                <div class="button-header-inside"><span>Maintenance</span></div>
+                <div class="button-header-inside"><span>Balance</span></div>
+                <div class="button-header-inside"><span>Withdrawals</span></div>
+                <div class="button-header-inside"><span>Contract</span></div>
+            </div>
+            <div class="quater-section table-inside">
+                <div class="table-inside-column" id="1">
+                    <span>BTC Optimal</span>
+                    <span>BTC Optimal</span>
+                    <span>BTC Optimal</span>
+                </div>
+                <div class="table-inside-column" id="2">
+                    <span>Активен</span>
+                    <span>Закачивается</span>
+                    <span>Закачивается</span>
+                </div>
+                <div class="table-inside-column" id="3">
+                    <span>28.02.2018</span>
+                    <span>28.02.2018</span>
+                    <span>28.02.2018</span>
+                </div>
+                <div class="table-inside-column" id="4">
+                    <span>03:13:26</span>
+                    <span>03:13:26</span>
+                    <span>03:13:26</span>
+                </div>
+                <div class="table-inside-column" id="5">
+                    <span>0.250134 ВТС</span>
+                    <span>0.250134 ВТС</span>
+                    <span>0.250134 ВТС</span>
+                </div>
+                <div class="table-inside-column" id="6">
+                    <span>3 145 USD</span>
+                    <span>3 145 USD</span>
+                    <span>3 145 USD</span>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="quater-section" id="my-contracts">
+            <div class="quater-title">Мои контракты</div>
+            <div class="quater-section"></div>
+            <div class="quater-section"></div>
+            <div class="quater-section"></div>
+        </div>
 
     </div>
+
+    
 
 </body>
 </html>
