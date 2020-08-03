@@ -309,6 +309,10 @@ opacity: 0.3;
     border-style: none;
     box-shadow: none;
     background: none;
+    /* border: 2px solid purple; */
+    /* width: 400px; */
+    padding: 0px;
+    justify-content: space-between;
 
 }
 .binance-button{
@@ -483,6 +487,7 @@ opacity: 0.3;
 
 } */
 .section#three .quater-section{
+    margin-bottom: 55px;
     padding: 16px 23px;
 
     background: #FFFFFF;
@@ -512,6 +517,12 @@ opacity: 0.3;
     /* height: 289px; */
 }
 
+.section#three .quater-section#statistic{
+    padding: 0 0;    
+}
+.section#three .quater-section#my-contracts{
+    padding: 0 0;    
+}
 .section#three>.quater-section#prediction>.quater-title{
     /*Прогноз доходности*/
     font-style: normal;
@@ -542,7 +553,7 @@ opacity: 0.3;
     flex-direction: column;
     height: 289px;
     background: none;
-    border: 3px solid red;
+    /* border: 3px solid red; */
 }
 
 .section#three div#statistic .header-inside{
@@ -550,41 +561,129 @@ opacity: 0.3;
     flex-direction: row;
     justify-content: flex-start;
     height: 41px;
+    margin-right: 0;
+    margin-bottom: 19px;
     padding: 0 0;
     background: none;
     box-shadow: none;
 }
 
 .button-header-inside{
-    width: 111px;
+    /* width: 111px; */
     height: 100%;
     border: 1px solid #E0E0E0;
     box-sizing: border-box;
     border-radius: 5px;
 
     margin-right: 30px;
+    padding: 5px 20px;
 
     text-align: center;
-    line-height: 41px;
+    line-height: 31px;
 
     font-style: normal;
     font-weight: normal;
     font-size: 17px;
-    /* line-height: 20px;
-    display: flex;
-    align-items: center;
-    text-align: center; */
+
     color: #A3A3A3;
 }
-.table-inside{
+.button-header-inside.first{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
+    border-radius: 5px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #255390;
+}
+.section#three .quater-section#statistic .table-inside{
     display:flex;
     flex-direction: row;
+    margin: 0 0;
 }
 .table-inside-column{
     display:flex;
     flex-direction: column;
-    margin-right: 30px;
+    align-content: center;
 }
 .table-inside>.table-inside-column>span{
     margin: 19px 0;
+}
+    
+.table-inside>.table-inside-column#a{
+    margin-right: 10px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+    color: #255390;
+}
+.table-inside>.table-inside-column#b{
+    margin-right: 60px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+    color: #4F4F4F;
+}
+.table-inside>.table-inside-column#c{
+    margin-right: 60px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+    color: #4F4F4F;
+}
+.table-inside>.table-inside-column#d{
+    margin-right: 100px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+    color: #4F4F4F;
+}
+.table-inside>.table-inside-column#e{
+    margin-right: 25px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #4F4F4F;
+}
+.table-inside>.table-inside-column#f{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    color: #828282;
+} 
+
+.section#three>.quater-section#statistic>.quater-title,
+.section#three>.quater-section#my-contracts>.quater-title{
+    margin-top:-30px;
+}
+
+.section#three>.quater-section#my-contracts>.quater-section{
+    height: 66px;
+    width: 303px;
+
+    margin-bottom: 15px;
+
 }
