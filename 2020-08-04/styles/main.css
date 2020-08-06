@@ -1,21 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
-*{
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-}
+*{font-family: 'Roboto', sans-serif;}
 
 body{
     background: #F6F7FB;
 }
-
 
 .main {
     position: relative;
     width: 95vw;
     /* border: 2px solid darkgreen; */
     margin: 0 auto;
+
 }
 .header{
     position: absolute;
@@ -30,6 +26,8 @@ body{
     height: 89px;
 
     min-width: 700px;
+
+    /* padding: 0 2.5vw; */
 
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
@@ -52,14 +50,15 @@ body{
     box-sizing: border-box;
     border-radius: 5px;
 
-    font-weight: bold;
-    font-size: 14px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    color: #000000;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        color: #000000;
 }
 
 .button-header.first{
@@ -97,12 +96,8 @@ body{
 .account{
     margin-left: auto;
     margin-right: 2.5vw;
-    
-    height: fit-content;
-
     display: flex;
     flex-direction: row;
-    align-content: center;
 }
 .avatar{
     width: 45px;
@@ -114,18 +109,13 @@ body{
     border-radius: 320px;
 }
 .username{
+    line-height: 48px;
+    font-style: normal;
+    font-weight: 500;
     font-size: 14px;
+    /* line-height: 16px; */
+    /* identical to box height */
     color: #828282;
-    align-self: center;
-
-}
-
-.ico-dropdown-arrow{
-    width: 12px;
-    height: 12px;
-    margin-left: 5px;
-    background: center / contain no-repeat url(..//images/ico-arrow-drop-down.png);
-    align-self: center;
 }
 
 .title-rates{
@@ -149,28 +139,37 @@ body{
 
     /* border: 1px solid red; */
 
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
     font-size: 25px;
     line-height: 29px;
-     
+    /* identical to box height */
+
     letter-spacing: 0.01em;
     color: #000000;   
 }
 .rates{
     position: relative;
+
+    /* border: 1px solid purple; */
+
     margin: 0 10px;
 
-    font-size: 25px;
-    line-height: 21px;
-    display: flex;
-    align-items: baseline;
-    letter-spacing: 0.01em;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 21px;
+        display: flex;
+        align-items: baseline;
+        letter-spacing: 0.01em;
 }
 .rates.first {
     margin-left: 25px;
 }
 .rates span{
-    color: #000000;
-    opacity: 0.3;
+color: #000000;
+opacity: 0.3;
 }
 
 .ico-rates{
@@ -204,11 +203,17 @@ body{
     width: 187px;
     height: 40px;
 
+    /* text-align: center;
+    line-height: 40px; */
+
     background: linear-gradient(270deg, #162970 0%, #255390 99.28%);
     box-shadow: 0px 8px 10px rgba(60, 84, 117, 0.15);
     border-radius: 20px;
 
+    font-style: normal;
+    font-weight: 500;
     font-size: 13px;
+    /* line-height: 15px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -218,8 +223,10 @@ body{
 .button-round::before{
     content: "+";
     font-size: large;
+    /* font-weight: 500; */
     margin-right: 20px;
 }
+
 
 
 
@@ -246,6 +253,8 @@ body{
 }
 .section#one .quater-section{
     width: 290px;
+    /* height: unset; */
+    /* border: 3px solid yellow; */
     flex-direction: column;
     justify-content: flex-end;
 } 
@@ -300,9 +309,11 @@ body{
     border-style: none;
     box-shadow: none;
     background: none;
-
+    /* border: 2px solid purple; */
+    /* width: 400px; */
     padding: 0px;
     justify-content: space-between;
+
 }
 .binance-button{
     width: 143px;
@@ -326,21 +337,21 @@ body{
 }
 
 .monitor-title{
-     
-     
-     
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
     font-size: 16px;
     line-height: 19px;
-     
+    /* identical to box height */
     color: #000000;
 }
 .monitor-speed{
-     
-     
+    font-family: Roboto;
+    font-style: normal;
     font-weight: bold;
     font-size: 24px;
     line-height: 28px;
-     
+    /* identical to box height */
     color: #000000;
     margin:  10px 0;
 
@@ -355,14 +366,16 @@ body{
     background-size: contain;
     filter: hue-rotate(180deg) brightness(0.75);
 }
-
+/* .ico-monitor.ico-speed{
+    border: 1px solid red;
+} */
 .mhs{
     font-size: 0.8rem;
     margin-left: 5px;
 }
 .monitor-sum{
-     
-     
+    font-family: Roboto;
+    font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
@@ -389,8 +402,8 @@ body{
     text-align: center;
     color: #929292;
 
-         
-         
+        font-style: normal;
+        font-weight: normal;
         font-size: 16px;
         line-height: 19px;
         text-align: center;
@@ -415,9 +428,11 @@ body{
         margin-right: 5px;
 }    
 .autopurchase{
+    font-style: normal;
+    font-weight: 500;
     font-size: 14px;
     line-height: 16px;
-     
+    /* identical to box height */
     color: #4F4F4F;    
 }
 
@@ -438,10 +453,11 @@ body{
     margin-right: 30px;
 }
 .sum-title{
-     
+    font-style: normal;
+    font-weight: 500;
     font-size: 14px;
     line-height: 16px;
-     
+    /* identical to box height */
     color: #828282;
 }
 .sum{
@@ -452,7 +468,7 @@ body{
     justify-content: flex-start;
 }
 .sum span.mhs{
-     
+    font-weight: normal;
     color: #828282;
 }
 .sum .checkbox-no-box.green{
@@ -462,11 +478,14 @@ body{
     filter: brightness(2);
 }
 .sum .checkbox-no-box.orange{
-    filter: hue-rotate(150deg) brightness(3); 
+    filter: hue-rotate(150deg) brightness(3) /*saturate(1.5)*/; 
 }    
 
 
 
+/* .secion,#three{
+
+} */
 .section#three .quater-section{
     margin-bottom: 55px;
     padding: 16px 23px;
@@ -477,10 +496,11 @@ body{
 } 
 .quater-title{
     position: absolute;
-     
+    font-style: normal;
+    font-weight: normal;
     font-size: 15px;
     line-height: 18px;
-     
+    /* identical to box height */
     color: #828282;
     margin-top: -45px;
     margin-bottom: 10px;
@@ -494,24 +514,26 @@ body{
  
 .section#three .quater-section#prediction{
     flex-direction: column;
+    /* height: 289px; */
 }
 
-
-.section#three .quater-section#statistic,
+.section#three .quater-section#statistic{
+    padding: 0 0;    
+}
 .section#three .quater-section#my-contracts{
-    padding: 0 0;
-    box-shadow: none;    
+    padding: 0 0;    
 }
 .section#three>.quater-section#prediction>.quater-title{
     /*Прогноз доходности*/
-     
+    font-style: normal;
+    font-weight: normal;
     font-size: 15px;
     line-height: 18px;
     color: #828282;
 }
 .section#three>.quater-section#prediction>.summary>.quater-title{
     /*День-Неделя-Месяц-Год*/
-     
+    font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
@@ -526,9 +548,6 @@ body{
     margin-right: 0;
 }
 
-.section#three .quater-section#prediction .summary .sum .monitor-sum{
-    font-size: 18px;    
-}
 
 .section#three div#statistic,.section#three div#my-contracts{
     flex-direction: column;
@@ -562,8 +581,8 @@ body{
     text-align: center;
     line-height: 31px;
 
-     
-     
+    font-style: normal;
+    font-weight: normal;
     font-size: 17px;
 
     color: #A3A3A3;
@@ -573,11 +592,10 @@ body{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
     border-radius: 5px;
 
-     
+    font-style: normal;
     font-weight: bold;
     font-size: 17px;
     line-height: 20px;
-
     display: flex;
     align-items: center;
     text-align: center;
@@ -593,8 +611,6 @@ body{
     display:flex;
     flex-direction: column;
     align-content: center;
-
-    line-height: 18px;
 }
 .table-inside>.table-inside-column>span{
     margin: 19px 0;
@@ -603,54 +619,59 @@ body{
 .table-inside>.table-inside-column#a{
     margin-right: 10px;
 
+    font-style: normal;
     font-weight: bold;
     font-size: 15px;
-     
+    line-height: 18px;
+    /* identical to box height */
     color: #255390;
 }
 .table-inside>.table-inside-column#b{
     margin-right: 60px;
 
     font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-     
-    color: #F2994A;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+    color: #4F4F4F;
 }
 .table-inside>.table-inside-column#c{
     margin-right: 60px;
 
+    font-style: normal;
     font-weight: bold;
     font-size: 15px;
-     
+    line-height: 18px;
+    /* identical to box height */
     color: #4F4F4F;
 }
 .table-inside>.table-inside-column#d{
     margin-right: 100px;
 
+    font-style: normal;
     font-weight: bold;
     font-size: 15px;
-     
+    line-height: 18px;
+    /* identical to box height */
     color: #4F4F4F;
 }
 .table-inside>.table-inside-column#e{
     margin-right: 25px;
 
+    font-style: normal;
     font-weight: bold;
     font-size: 18px;
+    line-height: 21px;
     
     color: #4F4F4F;
 }
-.table-inside-column#e>span::before{ 
-    content: '\25BC   ';
-    color: #F2994A;
-}
 .table-inside>.table-inside-column#f{
-     
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
-   
+    line-height: 19px;
+    /* identical to box height */
     color: #828282;
 } 
 
@@ -659,48 +680,10 @@ body{
     margin-top:-30px;
 }
 
-
-
-.section#three .quater-section#my-contracts .quater-section{
+.section#three>.quater-section#my-contracts>.quater-section{
     height: 66px;
     width: 303px;
 
     margin-bottom: 15px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-
-
-.my-contracts-title{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    color: #4F4F4F;
-    font-size: 15px;
-}
-.my-contracts-state{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    font-size: 13px;
-    opacity: 0.7;
-}
-
-.my-contracts-title-speed{
-    font-weight: bold;
-    color: #4F4F4F;
-
-}
-
-.my-contracts-state-is-active{
-    color: #F2994A;
-}
-
-.active{
-    color:green;
 }
