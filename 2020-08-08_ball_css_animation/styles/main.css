@@ -1,38 +1,3 @@
-
-/* @keyframes ball-drop{
-
-    0% {top: 0;}
-    100% {top:450px}
-} */
-/* @keyframes ball-squeeze{
-    0% {height: 50px;
-        top: 450px;}
-    100% {height: 40px;
-          top: 460px;} 
-}*/
-/* @keyframes jump{
-    0% {top: 450px;
-        left: 0px}
-    10% {top: 450px;
-        left: 0px}
-    20% {top: 450px;
-        left: 0px}
-    30% {top: 450px;
-        left: 0px}
-    40% {top: 450px;
-        left: 0px}
-    50% {top: 450px;
-        left: 0px}
-    60% {top: 450px;
-         left: 0px}
-    70% {top: 450px;
-        left: 0px}
-    80% {top: 450px;
-        left: 0px}
-    90% {top: 450px;
-        left: 0px}
-} */
-
 @keyframes move-along {
     0% {
         offset-distance: 0%;
@@ -44,31 +9,31 @@
 
 @keyframes rectangle-size-5{
     0% {height:90px;}
-    50% {height:50px;}
+    48% {height:50px;}
     100% {height:90px;}
 }
 
 @keyframes rectangle-size-4{
     0% {height:80px;}
-    50% {height:60px;}
+    48% {height:60px;}
     100% {height:80px;}
 }
 
 @keyframes rectangle-size-3{
     0% {height:70px;}
-    50% {height:70px;}
+    48% {height:70px;}
     100% {height:70px;}
 }
 
 @keyframes rectangle-size-2{
     0% {height:60px;}
-    50% {height:80px;}
+    48% {height:80px;}
     100% {height:60px;}
 }
 
 @keyframes rectangle-size-1{
     0% {height:50px;}
-    50% {height:90px;}
+    48% {height:90px;}
     100% {height:50px;}
 }
 
