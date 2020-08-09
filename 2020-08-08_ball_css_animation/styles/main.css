@@ -64,7 +64,7 @@ body{
     justify-content: space-between;
     align-items: flex-end;
 
-    animation: rectangles-resize 20s step-end 0ыs infinite normal none; */
+    animation: rectangles-resize 20s step-end 0s infinite normal none; */
 
 }
 .rectangle{
