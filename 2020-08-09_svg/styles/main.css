@@ -1,0 +1,22 @@
+
+body{
+    background: lightgray;
+}
+
+.frame {
+    position: relative;
+    width: 520px;
+    height: 520px;
+
+    border: 2px solid darkgrey;
+    margin: 100px auto;
+    padding: auto auto;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.vector>path:hover{
+    fill:red;
+}
