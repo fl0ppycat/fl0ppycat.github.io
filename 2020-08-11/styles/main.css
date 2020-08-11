@@ -26,7 +26,7 @@ body{
     background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0) 50%, black 50%, black 100%);
 
     transition: 60s;
-    transition-timing-function: linear;
+    transition-timing-function: steps(60, end);
 
     transform: rotate(360deg);
 }
