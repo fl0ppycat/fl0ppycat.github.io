@@ -8,38 +8,25 @@ body{
 
     position: relative;
     /* border: 2px solid darkgray; */
-    width: 192px;
-    height: 270px;
+    width: 300px;
+    height: 300px;
     margin: 100px auto;
 
-    /* perspective: 1000px; */
+    background: center / contain no-repeat url(..//images/clock1.png);
 }    
-.frame:hover .front {
-    transform: rotateY(180deg);
-}
 
-.frame:hover .back {
-    transform: rotateY(360deg);
-}  
-
-.front, .back {
+.arrow{
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 1px;
+    height: 200px;
 
-    backface-visibility: hidden;
+    left: 150px;
+    top:50px;
 
-    transition: 1s;
+    background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0) 50%, black 50%, black 100%);
 
+    transition: 60s;
+    transition-timing-function: linear;
 
-}  
-.front{
-    background: center / contain no-repeat url(..//images/1.png);
-    /* background-color: blue; */
+    transform: rotate(360deg);
 }
-.back{
-    background: center / contain no-repeat url(..//images/2.png);
-    /* background-color: red; */
-    transform: rotateY(180deg);
-}
-
