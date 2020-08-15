@@ -1,0 +1,89 @@
+@keyframes slideme {
+    0% {
+      left: -30px;
+      margin-left: 0px;
+    }
+    30% {
+      left: 110%;
+      margin-left: 80px;
+    }
+    100% {
+      left: 110%;
+      margin-left: 80px;
+    }
+  }
+
+
+body{
+    width: 100vw;
+    background: lightgray;
+}
+
+.button {
+    position: relative;
+    
+    width: 300px;
+    height: 100px;
+    margin: 300px auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-bottom: 2px solid #E8340E;
+    border-radius: 6px;
+    position: relative;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    color: #FFF;
+
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+
+    background: #fa4923;
+    background: linear-gradient(to right, #fa4923 25%, #ffbb00);
+ 
+    box-shadow: 0px 9px 16px 0px rgba(250, 73, 35, 0.25);
+ 
+    transition: ease 0.3s;
+}
+
+.button:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fa4923;
+    opacity: 0;
+    z-index: 1;
+    transition: ease 0.3s;
+}
+
+.button:hover:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 300px;
+    margin-left: 60px;
+    background: #fff;
+    position: absolute;
+    left: -40px;
+    top: -150px;
+    z-index: 1;
+    transform: rotate(45deg);
+    transition: all 0.1s;
+    animation-name: slideme;
+    animation-duration: 3s;
+    animation-delay: 0.05s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}

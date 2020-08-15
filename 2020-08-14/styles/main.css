@@ -1,0 +1,40 @@
+.main{
+  padding: 10px;
+  font-size: 2rem;
+
+  width:80vw;
+  margin: 50px auto;
+
+  border: 2 px solid red;
+  background-color: lightgray;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.div_child{
+
+  flex:1 1;
+
+  margin: 5px;
+  min-width: 150px;
+  
+  height:200px;
+
+  border: 2px solid green;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.div1{
+  width:70px;
+  height: 70px;
+
+  background-color: purple;
+
+  margin: 2px;
+}
