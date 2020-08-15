@@ -48,7 +48,7 @@
 
 body{
   max-width: 760px;
-  min-width: 530px;
+  min-width: 320px;
   margin: 0 auto;
 }
 
@@ -171,9 +171,7 @@ body{
   justify-content: space-around;
 }
 
-.content-card{
-  background-image: url('..//images/content-card.png');
-  
+.content-card{  
   height: fit-content;
   width: fit-content;
   
