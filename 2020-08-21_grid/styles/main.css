@@ -1,0 +1,28 @@
+main {
+  width: 400px;
+  margin: 0 auto;
+  border: 2px solid green;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 33% 67%;
+      grid-template-columns: 33% 67%;
+}
+
+div {
+  height: 50px;
+  border: 2px solid blue;
+}
+
+.big {
+  width: 33%;
+}
+
+.other {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr 1fr;
+  grid-row: auto;
+  gap: 2px;
+}
+/*# sourceMappingURL=main.css.map */

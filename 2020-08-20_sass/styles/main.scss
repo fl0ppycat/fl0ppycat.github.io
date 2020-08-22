@@ -1,0 +1,56 @@
+html{
+    font-size: 2rem;
+}
+
+body{
+    width:400px;
+    border: 1px solid black;
+}
+
+/********* MAIN **********/
+
+$color1: orange;
+$color2: lime;
+$colorb: gray;
+$font1: Arial;
+$font-size-1: 1.5rem;
+$size1: 30px;
+$size2: 50px;
+$count: 3;
+
+%bl-elem{
+    width: $size1;
+    height: $size2;
+    color: purple;
+}
+
+.volvo{
+    color:$color1;
+    display: flex;
+}
+
+.first{
+    .ford{
+        color:$color2;
+    }
+    .opel{
+        // font-family: $font1;
+        font-size:$font-size-1;
+        width:fit-content;
+        @extend %bl-elem;
+
+    }
+}
+
+.second{
+    &:hover{
+        background:$colorb;
+    }
+    .ford{
+        color:$color1;
+        @extend %bl-elem;
+    }
+    .volvo{
+        @extend %bl-elem;
+    }
+}

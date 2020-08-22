@@ -1,0 +1,42 @@
+html {
+  font-size: 2rem;
+}
+
+body {
+  width: 400px;
+  border: 1px solid black;
+}
+
+/********* MAIN **********/
+.first .opel, .second .ford, .second .volvo {
+  width: 30px;
+  height: 50px;
+  color: purple;
+}
+
+.volvo {
+  color: orange;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.first .ford {
+  color: lime;
+}
+
+.first .opel {
+  font-size: 1.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.second:hover {
+  background: gray;
+}
+
+.second .ford {
+  color: orange;
+}
+/*# sourceMappingURL=main.css.map */
