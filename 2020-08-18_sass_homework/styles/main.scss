@@ -1,27 +1,54 @@
-$size1: 130px;
+$size: 130px; //square side size
+$gap: 10px; //distance between squares 
+$rows-count: 3;
+$columns-count: 4;
 
 body{
     background: rgb(44, 44, 44);
 }
 
 main{
-    width: 560px;
-    height: 420px;
+    width: $gap + (($size + $gap) * $columns-count);
+    height: $gap + (($size + $gap) * $rows-count);
 
-    padding: 20px;
+    margin: 30px auto;
 
-    background: rgb(160, 160, 160);
+    background-image:
+    repeating-linear-gradient(
+    to right,
+    white, white $gap,
+    rgb(75, 75, 75) $gap, rgb(75, 75, 75) ($gap + $size)),
 
-    margin: 100px auto;
+    repeating-linear-gradient(
+    to bottom,
+    white, white $gap,
+    rgb(75, 75, 75) $gap, rgb(75, 75, 75) ($gap + $size));
 
-    display: flex;
-    flex-wrap: wrap;
-
-    div{
-        width: $size1;
-        height: $size1;
-        background: gray;
-
-        margin: 5px;
-    }
+    background-blend-mode: screen;
 }
+
+
+    //fixed-size example
+    //requires 12 <div>s at index.html
+
+    // main{
+    //     width: 560px;
+    //     height: 420px;
+    
+    //     padding: 20px;
+    
+    //     background: rgb(160, 160, 160);
+    
+    //     margin: 100px auto;
+    
+    //     display: flex;
+    //     flex-wrap: wrap;
+    
+    //     div{
+    //         width: $size1;
+    //         height: $size1;
+    //         background: gray;
+    
+    //         margin: 5px;
+    //     }
+    // }    

@@ -3,22 +3,10 @@ body {
 }
 
 main {
-  width: 560px;
-  height: 420px;
-  padding: 20px;
-  background: #a0a0a0;
-  margin: 100px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-main div {
-  width: 130px;
-  height: 130px;
-  background: gray;
-  margin: 5px;
+  width: 570px;
+  height: 430px;
+  margin: 30px auto;
+  background-image: repeating-linear-gradient(to right, white, white 10px, #4b4b4b 10px, #4b4b4b 140px), repeating-linear-gradient(to bottom, white, white 10px, #4b4b4b 10px, #4b4b4b 140px);
+  background-blend-mode: screen;
 }
 /*# sourceMappingURL=main.css.map */
