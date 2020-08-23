@@ -1,0 +1,27 @@
+$size1: 130px;
+
+body{
+    background: rgb(44, 44, 44);
+}
+
+main{
+    width: 560px;
+    height: 420px;
+
+    padding: 20px;
+
+    background: rgb(160, 160, 160);
+
+    margin: 100px auto;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    div{
+        width: $size1;
+        height: $size1;
+        background: gray;
+
+        margin: 5px;
+    }
+}

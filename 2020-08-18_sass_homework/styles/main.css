@@ -1,0 +1,24 @@
+body {
+  background: #2c2c2c;
+}
+
+main {
+  width: 560px;
+  height: 420px;
+  padding: 20px;
+  background: #a0a0a0;
+  margin: 100px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main div {
+  width: 130px;
+  height: 130px;
+  background: gray;
+  margin: 5px;
+}
+/*# sourceMappingURL=main.css.map */
