@@ -3,6 +3,11 @@
 $div-color: #c4c4c4;
 $padding: 10px;
 
+@keyframes slide{
+    0%{transform: translate(-100%, 0);}
+    100%{transform: translate(250%, 0)}
+}
+
 body{
     background: #f0f0f0;
 }
@@ -13,31 +18,32 @@ body{
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+
+
 .wrap{
-    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
     height: 100vh;
     box-sizing: border-box;
 
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 1fr 2fr 1fr 0.3fr 1.7fr 1fr;
-
-    grid-template-areas: 
-        "hd-l hd-l hd-l hd-l hd-a hd-a"
-        "as   as   ar-s ar-s ar-s ar-s"
-        "as   as   ft-s ft-s ft-s ft-s"
-        "scrl scrl scrl scrl scrl scrl"
-        "ar   ar   ar   ar   ar   ar  "
-        "ft   ft   ft   ft   ft   ft  "       
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 15vh 30vh 15vh 5vh 20vh 5vh;
+    grid-template-areas:
+    
+        "hd-l hd-l hd-a"
+        "as   ar-s ar-s"
+        "as   ft-s ft-s"
+        "scrl scrl scrl"
+        "ar   ar   ar  "
+        "ft   ft   ft  "
     ;
 
     .logo{
         grid-area:hd-l;
         background-color: $div-color;
         padding: $padding * 2;
-
-        display: flex;
+        display: grid;
         align-items: center;
         font-size:32px ;
     }
@@ -45,7 +51,8 @@ body{
         grid-area:hd-a;
         background-color: $div-color;
         padding: $padding * 2;
-        display: flex;
+        display: grid;   
+        grid-auto-flow: column;  
         justify-content: space-between;
         align-items: center;
     }
@@ -60,6 +67,9 @@ body{
         section{
             background-color: $div-color;
             padding: $padding;
+            font-size: 14px;
+            overflow-x: hidden;
+            overflow-y: scroll;            
         }
         .lorem-3{
             grid-row: 1/3;
@@ -81,38 +91,27 @@ body{
             grid-row: 5/7;
             grid-column: 1/2;
         }
-        // section{
-        //     position: relative;
-        //     border: 2px solid cyan;
-        //     grid-row: 1/3;
-        //     grid-column: 1/2;
-            
-        //     &:nth-child(2n){
-        //     border: 2px solid cyan;
-        //     grid-row: 2/4;
-        //     grid-column: 2/3;
-        //     }
-        // }
     }
 
     .ar-s{
         grid-area: ar-s;
 
         display: grid;
-        grid-template-columns: 1fr 70px 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(1 fr);
 
         .main-section{
             background-color: $div-color;
-            grid-column: 1/3;
+            max-width: 420px;
 
-            display: flex;
-            flex-direction: row-reverse;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            display: grid;
+            grid-auto-flow: column;
             align-items: center;
-            justify-items: flex-start;
             span{
-                padding: $padding;
-                padding-right: 0;
+                padding: $padding $padding $padding 0;
                 text-align: justify;
                 font-size: 14px;
             }    
@@ -132,11 +131,9 @@ body{
             }
             
             &:nth-child(2n){
-                grid-column: 2/5;
-                flex-direction: row;
+                justify-self: right;
                 span{
-                    padding-right: $padding;
-                    padding-left: 0;
+                    padding: $padding 0 $padding $padding;    
                 }
             }
         }
@@ -144,18 +141,25 @@ body{
 
     .ft-s{
         grid-area: ft-s;
+
+        background-color: $div-color;
+        background-image: url("../images/flowers.png");
+        background-position: center;
+        background-size: contain;
+        background-blend-mode: screen;
     }
 
 
 
     article{
-        grid-area: ar;;
+        grid-area: ar;
         display: flex;
         .not-main-section{
             background-color: $div-color;
             padding: $padding;
             text-align: justify;
             width: 50%;
+            overflow-y: auto;
         }
     }
 
@@ -163,18 +167,56 @@ body{
         grid-area: scrl;
         background-color: $div-color;
         padding: $padding;
-        overflow-y: scroll;
-        max-height: 40px;
+
+        overflow: hidden;
+
+        span{
+        white-space:nowrap;
+        display: inline-block;
+        animation: slide 10s infinite linear;
+        }
     }
 
-    footer{
+    .main-footer-hills{
         grid-area: ft;
         
         background-color: $div-color;
-        background-image: url("../images/flowers.png");
+        background-image: url("../images/hills.png");
         background-position: center;
         background-size: contain;
-        // background-repeat: no-repeat;
-        background-blend-mode: screen;
+        background-blend-mode: overlay;
+    }
+}
+
+@media (max-width:399px) {
+    .wrap{
+      width: 399px;
+      min-width: 399px;
+      overflow-X: scroll;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 10vh 5vh 30vh 15vh 20vh 5vh;
+      grid-template-areas:
+    
+        "hd-l hd-l hd-l"
+        "hd-a hd-a hd-a"
+        "as   ar-s ar-s"
+        "as   ft-s ft-s"
+        "ar   ar   ar  "
+        "ft   ft   ft  "    ;
+    
+
+    .main-footer-hills{grid-area: ft;}
+    article{grid-area: ar;}
+    .ft-s{grid-area: ft-s;}
+    .ar-s{grid-area: ar-s;}
+    aside{grid-area: as;}
+    .about{ padding:0 20px;
+            grid-area:hd-a;
+           }
+    .logo{grid-area:hd-l;
+          padding: 0 10px;}
+    .scroll{display: none;}
     }
 }
