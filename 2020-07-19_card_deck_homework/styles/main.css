@@ -99,7 +99,7 @@ span {
     background-image: none;
     background-blend-mode: normal;
 }  */
-
+/* 
 @keyframes hide {
     from { transform: scaleY(1); }
     to   { transform: scaleY(0.1); }
@@ -109,4 +109,4 @@ span {
     from { transform: scaleY(0.1); }
     to   { transform: scaleY(1); }
   }  
-  
+   */
