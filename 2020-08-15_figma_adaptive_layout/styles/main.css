@@ -35,7 +35,7 @@
 @media (max-width:319px) {
   body{
     min-width: 319px;
-    overflow-X: scroll;
+    /* overflow-X: scroll; */
   }
   .main{
     padding: 0 5px;
