@@ -32,9 +32,9 @@
 .slide:nth-child(3n){
   display:none;}
 
-@media (max-width:319px) {
+@media (max-width:239px) {
   body{
-    min-width: 319px;
+    min-width: 239px;
     /* overflow-X: scroll; */
   }
   .main{
@@ -42,7 +42,7 @@
   }
 }
 
-@media (min-width:320px) and (max-width:749px) {
+@media (min-width:240px) and (max-width:749px) {
   .main{
     padding: 0 10px;
   }

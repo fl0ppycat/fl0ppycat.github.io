@@ -1,0 +1,55 @@
+body {
+  background-color: #414141;
+  font-family: sans-serif;
+}
+
+.battleground {
+  padding: 1vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #414141;
+}
+
+.fleet {
+  padding: 1vw;
+  margin: 1vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: gray;
+}
+
+.ship {
+  width: 8vw;
+  height: 8vw;
+  margin: 1vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1,5rem;
+  font-weight: bold;
+  color: #414141;
+  background-color: #c7c7c7;
+}
+
+#dead{
+  display: none;
+  background-color: gray;
+  color: gray;
+}
+/*# sourceMappingURL=main.css.map */
