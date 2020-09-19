@@ -1,8 +1,6 @@
 body {
   background-color: #414141;
   font-family: sans-serif;
-  padding: 20px;
-  color: rgb(172, 172, 172);
 }
 
 .battleground {
@@ -16,7 +14,7 @@ body {
           flex-direction: column;
   background-color: #414141;
 }
-/* 
+
 .fleet {
   padding: 1vw;
   margin: 1vw;
@@ -53,5 +51,5 @@ body {
   display: none;
   background-color: gray;
   color: gray;
-} */
+}
 /*# sourceMappingURL=main.css.map */

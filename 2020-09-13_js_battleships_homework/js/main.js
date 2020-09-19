@@ -1,18 +1,12 @@
-let nubmerOfFleets = 3;
-let amountOfFleets = 4;
+let nubmerOfFleets = 6;
+let amountOfFleets = 10;
 
+// let input1 = document.querySelector('.input1');
+// let input2 = document.querySelector('.input2');
 
-// let input1Element = document.querySelector('.input1');
-// let input2Element = document.querySelector('.input2');
-// let setButtonElement = document.querySelector('.setButton');
+// if(input1.value != null){nubmerOfFleets = Number(input1.value);
+// if(input2.value != null){amountOfFleets = Number(input2.value);
 
-// setButtonElement.addEventListener('click',() => {    
-//     let nubmerOfFleets = (Number(input1Element.value));
-//     let amountOfFleets = (Number(input2Element.value));
-// });
-
-
-let battlegroundDiv = document.querySelector('.battleground');
 
 let goButton = document.querySelector('.goButton');
 
@@ -22,7 +16,9 @@ class destroer {
     constructor() {
         this.label = "Destroer",
         this.healthPoints = 45,
-        this.attackPoints = 10
+        this.attackPoints = 10,
+        // this.attackPoints = 999,
+        this.state = "ok"
     }
 }
 
@@ -30,15 +26,19 @@ class battleship {
     constructor() {
         this.label = "Battleship",
         this.healthPoints = 100,
-        this.attackPoints = 4
+        this.attackPoints = 4,
+        // this.attackPoints = 999,
+        this.state = "ok"
     }
 }
 
 class carrier {    
     constructor() {
-        this.label = "Carrier",
+        this.label = "Aircraft carrier",
         this.healthPoints = 15,
-        this.attackPoints = 40
+        this.attackPoints = 40,
+        // this.attackPoints = 999,
+        this.state = "ok"
     }
 }
 
@@ -46,7 +46,9 @@ class cruiser {
     constructor() {
         this.label = "Cruiser",
         this.healthPoints = 60,
-        this.attackPoints = 8
+        this.attackPoints = 8,
+        // this.attackPoints = 999,
+        this.state = "ok"
     }
 }
 
@@ -76,82 +78,151 @@ function shipPicker(n){
       }
 }
 
-// function randomIdGen() {
-//     return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10);
-// }
-
+//создаем массив флотов, размером с переменную numberOfFleets, заданную в начале 
 let fleets = new Array(nubmerOfFleets);
 
 for (let i = 0; i < nubmerOfFleets; i++){
-    let strNewFleet='';
-    fleets[i] = new Array(amountOfFleets);
-    strNewFleet = strNewFleet + "<div class=\"fleet " + "\" id=fleet" + String(i) + "></div>";
-    battlegroundDiv.innerHTML = battlegroundDiv.innerHTML + strNewFleet;
-    let strNewShip = '';
+    fleets[i] = new Array(amountOfFleets); //в каждый элемент массива fleets добавляем массив конкретного флота, размером amountOfFleets
     for (let j = 0; j < fleets[i].length; j++){
-        fleets[i][j] = shipPicker(getRandomInt(1,4));
-        fleets[i][j].htmlID = ("fleet" + String(i) + "ship" + String(j));
-        strNewShip = strNewShip + "<div class=\"ship" + "\" id=" + fleets[i][j].htmlID + ">" + fleets[i][j].healthPoints + "</div>";
-        document.getElementById("fleet" + String(i)).innerHTML = strNewShip;
+        fleets[i][j] = shipPicker(getRandomInt(1,4));//в каждый элемент массива флота создаем корабль, выбирая его среди одного из 4х типов
     }    
 }
 
-// function removeShip(ship){
-//     for (let i = 0; i < nubmerOfFleets; i++){
-//         for (let j = 0; j < fleets[i].length; j++){
-//             if(fleets[i][j].htmlID == ship.htmlID){
-//                 fleets.splice(j,1);
-//                 break;
-//             }
-//         } 
-//     }    
-// }
 
 
-function attack(first, second){
-    document.querySelectorAll(".ship").forEach(element => element.style.backgroundColor="rgb(199, 199, 199)");
+//функция, которая выводит в консоль один корабль
+//получает  на вход объект корабля, возвращает строку
+function printShip(ship){
+    let first = "";
+    let second = "";
+    switch (ship.state) {
+        case "ok":
+            // first = "[";
+            // second = "]";
+            break;
+        case "shooter":
+            first = "(";
+            second = ")";
+            break;
+        case "target":
+            first = "{";
+            second = "}";
+            break;
+        case "dead":
+            // first = "";
+            // second = "-";
+            break;
+        default:
+          console.log(`Something goes wrong in stateSwitcher function`);
+      }
+    
+    consoleShipString = `${first}${ship.healthPoints}${second}`
 
-    document.getElementById(second.htmlID).style.backgroundColor="red";
-    document.getElementById(first.htmlID).style.backgroundColor="yellow";
+    return (consoleShipString);
+}
 
-    second.healthPoints = second.healthPoints - first.attackPoints;
-    document.getElementById(second.htmlID).innerHTML = second.healthPoints;
-    console.log(first.htmlID + " attacked " + second.htmlID + " and dealed " + first.attackPoints + " damage");
 
-    if(second.healthPoints < 1){
-        console.log(second.htmlID + " died");
-        document.getElementById(second.htmlID).id="dead";
-        // removeShip(second);
+//выводим текущее состояние всех флотов
+function printFleets(){
+    for (let i = 0; i < nubmerOfFleets; i++){
+        let consoleFleetString = '';
+        for (let j = 0; j < fleets[i].length; j++){
+            if (fleets[i][j].state == "dead"){
+                consoleFleetString = `${consoleFleetString} x`
+            } else {
+            consoleFleetString = `${consoleFleetString} ${printShip(fleets[i][j])}`;
+            }
+        }
+        console.log(consoleFleetString); 
     }
+}
+
+function defeatedFleetsCount(){
+    let counter = null;
+    for (let i = 0; i < nubmerOfFleets; i++){
+        if (fleets[i].state == "defeated"){
+            counter++;
+        }
+    }
+    return counter;
 }
 
 
 function nextTurn(){  
+    while(defeatedFleetsCount() != (nubmerOfFleets-1)){
+            
+            console.log("");
+            console.log("");
+            console.log(""); 
 
-    let firstFleet = 0;
-    let firstShip = 0;
-    let secondFleet = 0;
-    let secondShip = 0;
-    
-    do{
-        do{
-            firstFleet = getRandomInt(0,nubmerOfFleets);
-            firstShip = getRandomInt(0,amountOfFleets);
-            first = fleets[firstFleet][firstShip];
-        } while (first.healthPoints < 1);
+            let firstFleet = 0;
+            let firstShip = 0;
+            let secondFleet = 0;
+            let secondShip = 0;
+            
+            do{
+                do{
+                    firstFleet = getRandomInt(0,nubmerOfFleets);
+                    firstShip = getRandomInt(0,amountOfFleets);
+                    first = fleets[firstFleet][firstShip];
+                } while (first.state == "dead");
 
-        do{
-            secondFleet = getRandomInt(0,nubmerOfFleets);
-            secondShip = getRandomInt(0,amountOfFleets);
-            second = fleets[secondFleet][secondShip];
-        } while (second.healthPoints < 1);
-        
-    } while ((secondFleet == firstFleet) || (secondShip == firstShip))
-        
-    attack(first,second);  
+                do{
+                    secondFleet = getRandomInt(0,nubmerOfFleets);
+                    secondShip = getRandomInt(0,amountOfFleets);
+                    second = fleets[secondFleet][secondShip];
+                } while (second.state == "dead");
+                
+            } while ((secondFleet == firstFleet) || (secondShip == firstShip));
+                
+
+            first.state = "shooter";
+            second.state = "target";
+
+            
+            let damage = (first.attackPoints + ((getRandomInt(((first.attackPoints/100)*20),((first.attackPoints/100)*(-20)))))); // урон с погрешностью в -20%/+20%
+            second.healthPoints = second.healthPoints - (damage); 
+            
+            console.log(`ship №${firstShip+1} from fleet №${firstFleet+1} attacked ship №${secondShip+1} from fleet №${secondFleet+1} and dealed ${damage} damage`);
+            
+            printFleets();
+
+            first.state = "ok";
+            if (second.healthPoints > 0){
+                second.state = "ok";
+            } else {
+                second.state = "dead";
+                console.log(`ship №${secondShip+1} from fleet №${secondFleet+1} is dead`);
+            }
+
+
+            for (let i = 0; i < nubmerOfFleets; i++){
+                let deadShipCounter = null;
+                if (fleets[i].state != "defeated"){
+                    for (let j = 0; j < fleets[i].length; j++){
+                        if (fleets[i][j].state == "dead"){
+                            deadShipCounter++;
+                        }
+                    }
+                    if (deadShipCounter == fleets[i].length){
+                        fleets[i].state = "defeated"
+                        console.log(`fleet №${i+1} is defeated`);
+                    }
+                }       
+            }
+            console.log(``);
+    }
+
+    for (let i = 0; i < nubmerOfFleets; i++){
+        if(fleets[i].state != "defeated"){
+            console.log(`fleet №${i+1} won this battle`);
+        }
+    };
+
 }
+
+
 
 goButton.addEventListener('click',() => {
     nextTurn()
 });
-

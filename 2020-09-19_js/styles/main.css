@@ -1,8 +1,61 @@
-body {
+.main {
+  /* height: 300px; */
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.btn{
+  /* width: 150px;
+  height: 50px; */
+  background-color: rgb(207, 207, 207);
+  user-select: none;
+  border: 2px solid white;
+  padding: 5px;
+}
+
+.buttons{
+  width: 96vw;
+  display: flex;
+  flex-direction: row;
+
+  margin: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body {
   background-color: #414141;
   font-family: sans-serif;
-  padding: 20px;
-  color: rgb(172, 172, 172);
 }
 
 .battleground {
@@ -16,7 +69,7 @@ body {
           flex-direction: column;
   background-color: #414141;
 }
-/* 
+
 .fleet {
   padding: 1vw;
   margin: 1vw;
@@ -53,5 +106,5 @@ body {
   display: none;
   background-color: gray;
   color: gray;
-} */
-/*# sourceMappingURL=main.css.map */
+}
+# sourceMappingURL=main.css.map */
