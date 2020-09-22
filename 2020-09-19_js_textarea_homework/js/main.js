@@ -23,7 +23,7 @@ goButtonFunction = () => {
 
     let nextWord = textareaElement.value;
 
-    textareaElement.value = textareaElement.value + " "
+    textareaElement.value = textareaElement.value + " ";
 
     for (let i = 0; i < textareaElement.value.length; i++){  
         if (textareaElement.value[i] == " "){
@@ -39,16 +39,12 @@ goButtonFunction = () => {
         }
     }
 
+    textareaElement.value = textareaElement.value.trimEnd();
+
     let inputElementsArray = document.querySelectorAll('.input');
     let theLongesWord = textByWordsArray[0];
 
-    for (let i = 0; i < inputElementsArray.length; i++){
-        // if (textByWordsArray[i] == ""){
-        //     inputElementsArray.splice(i,1);
-        //     textByWordsArray.splice(i,1);
-        //     i++;
-        // }
-        
+    for (let i = 0; i < inputElementsArray.length; i++){  
         inputElementsArray[i].value = textByWordsArray[i];
         if (theLongesWord.length < textByWordsArray[i].length){
             theLongesWord = textByWordsArray[i];
@@ -66,15 +62,30 @@ let randomButtonElement = document.querySelector('.randomButton');
 
 randomButtonFunction = () => {
 
-    thirtySymbolsString = "";
-    while(thirtySymbolsString.length != 30){
-        if((thirtySymbolsString.length > 30) || (thirtySymbolsString.length == 0)){
-            thirtySymbolsString = `${textByWordsArray[randomInteger(1,textByWordsArray.length-1)]}`
+    for (let i = 0; i < textByWordsArray.length; i++){
+        for (let j = 0; j < textByWordsArray.length; j++){            
+            if(textByWordsArray[i].length > textByWordsArray[j].length){
+                let temp = textByWordsArray[i];
+                textByWordsArray[i] = textByWordsArray[j];
+                textByWordsArray[j] = temp;
+            }
         }
-        thirtySymbolsString = `${thirtySymbolsString} ${textByWordsArray[randomInteger(1,textByWordsArray.length-1)]}`;
-    }        
-
-    console.log(`thirty Symbols String = ${thirtySymbolsString}`);
+    }  
+    
+    let thirtySymbolsString = "";
+    
+    for (let i = 0; i < textByWordsArray.length; i++){
+        thirtySymbolsString = `${textByWordsArray[i]}`;
+        for (let j = i+1; j < textByWordsArray.length; j++){
+            if( thirtySymbolsString.length + textByWordsArray[j].length < 30 ){
+                thirtySymbolsString = thirtySymbolsString + " " + textByWordsArray[j];
+                if(thirtySymbolsString.length == 30){break;}
+            } 
+        }
+        if(thirtySymbolsString.length == 30){break;}
+    }
+    if(thirtySymbolsString.length == 30) {console.log(`thirty Symbols String = ${thirtySymbolsString}`);}
+    else {console.log(`Seems like it is impossible to make a 30-symbols string from these input words`);}
 }
 
 randomButtonElement.addEventListener('click',randomButtonFunction);
