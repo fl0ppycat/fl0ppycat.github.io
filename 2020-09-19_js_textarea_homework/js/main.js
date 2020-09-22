@@ -6,6 +6,11 @@ let buttonElement = document.querySelector('.goButton');
 
 let textByWordsArray = [];
 
+function printArray(array){
+    for (let i = 0; i < array.length; i++){  
+        console.log(`element №${i} = "${array[i]}" (${array[i].length})`);
+    }
+}
 
 function randomInteger(min, max) {
     let rand = min + Math.random() * (max + 1 - min);
@@ -76,15 +81,17 @@ randomButtonFunction = () => {
     
     for (let i = 0; i < textByWordsArray.length; i++){
         thirtySymbolsString = `${textByWordsArray[i]}`;
-        for (let j = i+1; j < textByWordsArray.length; j++){
-            if( thirtySymbolsString.length + textByWordsArray[j].length < 30 ){
-                thirtySymbolsString = thirtySymbolsString + " " + textByWordsArray[j];
-                if(thirtySymbolsString.length == 30){break;}
-            } 
+        for (let j = 0; j < textByWordsArray.length; j++){
+            if(i != j){
+                if( thirtySymbolsString.length + textByWordsArray[j].length < 30 ){
+                    thirtySymbolsString = thirtySymbolsString + " " + textByWordsArray[j];
+                    if(thirtySymbolsString.length == 30){break;}
+                } 
+            }
         }
         if(thirtySymbolsString.length == 30){break;}
     }
-    if(thirtySymbolsString.length == 30) {console.log(`thirty Symbols String = ${thirtySymbolsString}`);}
+    if(thirtySymbolsString.length == 30) {console.log(`thirty Symbols String = "${thirtySymbolsString}" (${thirtySymbolsString.length})`);}
     else {console.log(`Seems like it is impossible to make a 30-symbols string from these input words`);}
 }
 
