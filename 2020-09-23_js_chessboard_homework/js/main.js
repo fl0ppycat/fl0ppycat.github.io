@@ -5,10 +5,13 @@ let CHARS = "ABCDEFGH"
 
 let str = ``;
 
+//массив html-элементов ячеек
 let cellsElementsArray = [];
 
+//функция, которая возвращает html-код фигуры по id её стартовой клетки
 figureById = (id) => {
     switch (id) {
+        //черные
         case "A7":
         case "B7":
         case "C7":
@@ -36,6 +39,35 @@ figureById = (id) => {
 
         case "E8":
             return("&#9818;");
+
+        //белые
+        case "A2":
+        case "B2":
+        case "C2":
+        case "D2": 
+        case "E2":
+        case "F2":
+        case "G2":
+        case "H2":   
+          return("&#9817;");
+        
+        case "A1":
+        case "H1":
+            return("&#9814;");
+        
+        case "B1":
+        case "G1":
+            return("&#9816;");
+        
+        case "C1":
+        case "F1":
+            return("&#9815;");
+        
+        case "D1":
+            return("&#9812;");
+
+        case "E1":
+            return("&#9813;");    
  
         default:
             return(``);
@@ -44,21 +76,25 @@ figureById = (id) => {
 
 for (let i = 8; i > 0; i--){
     for (let j = 0; j < 8; j++){
-        str = `<div id="${CHARS[j]}${i}" class="cell row${i}"`;
+        str = `<div id="${CHARS[j]}${i}" class="cell row${i}"`; //добавляем id, класс "cell" всем ячейкам и "row[i] ячейкам текущей строки
 
-        if( ((i + j) % 2) == 0){
+        if( ((i + j) % 2) == 0){ //красим чётные клетки
             str = `${str} style="background-color: grey;"></div>`;} else {
                 str = `${str}></div>`;
         }
 
         chessboardDiv.innerHTML = `${chessboardDiv.innerHTML} ${str}`; 
         
+        //заполняем текущую ячейку фигурой, если нужно, с помощью функции figureById
         document.getElementById(`${CHARS[j]}${i}`).innerHTML = figureById(`${CHARS[j]}${i}`);
     }
+    //каждому элементу массива присваиваем массив элементов текущей строки
     cellsElementsArray[8-i] = document.querySelectorAll(`.row${i}`);
 }
 
 console.table(cellsElementsArray);
+
+
 
 
 
@@ -87,5 +123,18 @@ console.table(cellsElementsArray);
 //             if(j == 3){cellsArray[i][j].innerHTML = "&#9812;";}
 //             if(j == 4){cellsArray[i][j].innerHTML = "&#9813;";}  
 //         }  
+//     }
+// }
+
+
+
+// cellsElementsArray[1].forEach(element => element.innerHTML = "&#9817;");
+
+
+// for (let i = 8; i > 0; i--){
+//     cellsElementsArray
+//     for (let j = 0; j < 8; j++){
+//         // if(i == 4){cellsElementsArray[i][j].innerHTML = "&#9823;";}
+//         cellsElementsArray[i][j].innerHTML = "&#9817;";
 //     }
 // }
