@@ -146,14 +146,14 @@ initialize = () => {
     let str = ``;
 
     for (let i = 0; i < 8; i++){
-        chessboard[8-i] = [];         
-        cellsElementsArray[8-i] = []; 
+        chessboard[i] = [];         
+        cellsElementsArray[i] = []; 
         
         for (let j = 0; j < 8; j++){
-            id = `${CHARS[j]}${i+1}`; //id клетки, с которой работает текущая итерация цикла
+            id = `${CHARS[j]}${8-i}`; //id клетки, с которой работает текущая итерация цикла
             
             //в текущую ячейку спавним фигуру, в соответствии с id ячейки
-            chessboard[8-i][j] = figureById(`${id}`);
+            chessboard[i][j] = figureById(`${id}`);
             
             //собираем <div>-строку следующей клетки
             str = `<div id="${id}" class="cell"`; // добавляем id, класс "cell" всем ячейкам
@@ -165,9 +165,9 @@ initialize = () => {
             //добавляем получившуюся клетку к уже имеющимся
             chessboardDiv.innerHTML = `${chessboardDiv.innerHTML} ${str}`; 
             //добавляем ткущий div-объект в массив div-ов
-            cellsElementsArray[8-i][j] = document.getElementById(`${id}`);
+            cellsElementsArray[i][j] = document.getElementById(`${id}`);
             //рисуем в нем фигуру, если она там должна быть
-            if(chessboard[8-i][j] != null){cellsElementsArray[8-i][j].innerHTML = chessboard[8-i][j].htmlCode;}
+            if(chessboard[i][j] != null){cellsElementsArray[i][j].innerHTML = chessboard[i][j].htmlCode;}
         }
     }
     console.table(cellsElementsArray);
