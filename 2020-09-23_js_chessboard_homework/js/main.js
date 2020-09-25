@@ -1,14 +1,80 @@
 
 let chessboardDiv = document.querySelector('.chessboard');
 
-let CHARS = "ABCDEFGH" 
+const CHARS = "ABCDEFGH" 
 
-let str = ``;
+let chessboard = [];                // массив объектов-фигур для рассчетов игровой механики
+let cellsElementsArray = [];        // массив объектов-html для отображения происходящего на доске
 
-//массив html-элементов ячеек
-let cellsElementsArray = [];
+class King{
+    constructor(color, position){
+        if(color == "w"){
+            this.htmlCode = "&#9812;";
+        }
+        if(color == "b"){
+            this.htmlCode = "&#9818;";
+        }
+        // this.currentPosition = position;
+    }
+}
+class Queen{
+    constructor(color, position){
+        if(color == "w"){
+            this.htmlCode = "&#9813;";
+        }
+        if(color == "b"){
+            this.htmlCode = "&#9819;";
+        }
+        // this.currentPosition = position;
+    }
+}
+class Rook{
+    constructor(color, position){
+        if(color == "w"){
+            this.htmlCode = "&#9814;";
+        }
+        if(color == "b"){
+            this.htmlCode = "&#9820;";
+        }
+        // this.currentPosition = position;
+    }
+}
+class Bishop{
+    constructor(color, position){
+        if(color == "w"){
+            this.htmlCode = "&#9815;";
+        }
+        if(color == "b"){
+            this.htmlCode = "&#9821;";
+        }
+        // this.currentPosition = position;
+    }
+}
+class Knight{
+    constructor(color, position){
+        if(color == "w"){
+            this.htmlCode = "&#9816;";
+        }
+        if(color == "b"){
+            this.htmlCode = "&#9822;";
+        }
+        // this.currentPosition = position;
+    }
+}
+class Pawn{
+    constructor(color, position){
+        if(color == "w"){
+            this.htmlCode = "&#9817;";
+        }
+        if(color == "b"){
+            this.htmlCode = "&#9823;";
+        }
+        // this.currentPosition = position;
+    }
+}
 
-//функция, которая возвращает html-код фигуры по id её стартовой клетки
+
+//функция, которая возвращает фигуру по id её стартовой клетки
 figureById = (id) => {
     switch (id) {
         //черные
@@ -20,25 +86,25 @@ figureById = (id) => {
         case "F7":
         case "G7":
         case "H7":   
-          return("&#9823;");
+          return(new Pawn("b"));
         
         case "A8":
         case "H8":
-            return("&#9820;");
+            return(new Rook("b"));
         
         case "B8":
         case "G8":
-            return("&#9822;");
+            return(new Knight("b"));
         
         case "C8":
         case "F8":
-            return("&#9821;");
+            return(new Bishop("b"));
         
         case "D8":
-            return("&#9819;");
+            return(new King("b"));
 
         case "E8":
-            return("&#9818;");
+            return(new Queen("b"));
 
         //белые
         case "A2":
@@ -49,92 +115,62 @@ figureById = (id) => {
         case "F2":
         case "G2":
         case "H2":   
-          return("&#9817;");
+          return(new Pawn("w"));
         
         case "A1":
         case "H1":
-            return("&#9814;");
+            return(new Rook("w"));
         
         case "B1":
         case "G1":
-            return("&#9816;");
+            return(new Knight("w"));
         
         case "C1":
         case "F1":
-            return("&#9815;");
+            return(new Bishop("w"));
         
         case "D1":
-            return("&#9812;");
+            return(new King("w"));
 
         case "E1":
-            return("&#9813;");    
+            return(new Queen("w"));    
  
         default:
-            return(``);
+            // console.log(`Something is wrong in figureById function with "${id}"id`);
+            return null;
       }
 }
 
-for (let i = 8; i > 0; i--){
-    for (let j = 0; j < 8; j++){
-        str = `<div id="${CHARS[j]}${i}" class="cell row${i}"`; //добавляем id, класс "cell" всем ячейкам и "row[i] ячейкам текущей строки
 
-        if( ((i + j) % 2) == 0){ //красим чётные клетки
-            str = `${str} style="background-color: grey;"></div>`;} else {
-                str = `${str}></div>`;
-        }
+initialize = () => {
+    let str = ``;
 
-        chessboardDiv.innerHTML = `${chessboardDiv.innerHTML} ${str}`; 
+    for (let i = 0; i < 8; i++){
+        chessboard[8-i] = [];         
+        cellsElementsArray[8-i] = []; 
         
-        //заполняем текущую ячейку фигурой, если нужно, с помощью функции figureById
-        document.getElementById(`${CHARS[j]}${i}`).innerHTML = figureById(`${CHARS[j]}${i}`);
+        for (let j = 0; j < 8; j++){
+            id = `${CHARS[j]}${i+1}`; //id клетки, с которой работает текущая итерация цикла
+            
+            //в текущую ячейку спавним фигуру, в соответствии с id ячейки
+            chessboard[8-i][j] = figureById(`${id}`);
+            
+            //собираем <div>-строку следующей клетки
+            str = `<div id="${id}" class="cell"`; // добавляем id, класс "cell" всем ячейкам
+            if( ((i + j) % 2) == 0){ //красим чётные клетки
+                str = `${str} style="background-color: grey;"></div>`;} else {
+                    str = `${str}></div>`; //не красим нечётные
+            }
+
+            //добавляем получившуюся клетку к уже имеющимся
+            chessboardDiv.innerHTML = `${chessboardDiv.innerHTML} ${str}`; 
+            //добавляем ткущий div-объект в массив div-ов
+            cellsElementsArray[8-i][j] = document.getElementById(`${id}`);
+            //рисуем в нем фигуру, если она там должна быть
+            if(chessboard[8-i][j] != null){cellsElementsArray[8-i][j].innerHTML = chessboard[8-i][j].htmlCode;}
+        }
     }
-    //каждому элементу массива присваиваем массив элементов текущей строки
-    cellsElementsArray[8-i] = document.querySelectorAll(`.row${i}`);
+    console.table(cellsElementsArray);
 }
 
-console.table(cellsElementsArray);
-
-
-
-
-
-// for (let i = 8; i > 0; i--){
-//     for (let j = 0; j < 8; j++){ 
-//         cellsArray[i][j] = document.getElementById(`${CHARS[j]}${i}`);
-
-//         cellsArray[i][j].innerHTML = "";
-
-//         if(i == 7){cellsArray[i][j].innerHTML = "&#9823;";}
-//         if(i == 8){
-//             if((j == 0) || (j == 7)){cellsArray[i][j].innerHTML = "&#9820;";}
-//             if((j == 1) || (j == 6)){cellsArray[i][j].innerHTML = "&#9822;";}
-//             if((j == 2) || (j == 5)){cellsArray[i][j].innerHTML = "&#9821;";}
-
-//             if(j == 3){cellsArray[i][j].innerHTML = "&#9819;";}
-//             if(j == 4){cellsArray[i][j].innerHTML = "&#9818;";}  
-//         }
-        
-//         if(i == 2){cellsArray[i][j].innerHTML = "&#9817;";}
-//         if(i == 1){
-//             if((j == 0) || (j == 7)){cellsArray[i][j].innerHTML = "&#9814;";}
-//             if((j == 1) || (j == 6)){cellsArray[i][j].innerHTML = "&#9816;";}
-//             if((j == 2) || (j == 5)){cellsArray[i][j].innerHTML = "&#9815;";}
-
-//             if(j == 3){cellsArray[i][j].innerHTML = "&#9812;";}
-//             if(j == 4){cellsArray[i][j].innerHTML = "&#9813;";}  
-//         }  
-//     }
-// }
-
-
-
-// cellsElementsArray[1].forEach(element => element.innerHTML = "&#9817;");
-
-
-// for (let i = 8; i > 0; i--){
-//     cellsElementsArray
-//     for (let j = 0; j < 8; j++){
-//         // if(i == 4){cellsElementsArray[i][j].innerHTML = "&#9823;";}
-//         cellsElementsArray[i][j].innerHTML = "&#9817;";
-//     }
-// }
+initialize();
