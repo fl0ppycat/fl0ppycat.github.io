@@ -1,6 +1,7 @@
 body {
   background: gray;
   padding: 20px;
+  font: outline;
 }
 
 .chessboard {
@@ -34,5 +35,15 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-size: 2rem;
+}
+
+.white-figure {
+  color: white;
+  text-shadow: 0 0 15px rgba(128, 128, 128, 0.3), 0 0 10px rgba(128, 128, 128, 0.3), 2px 2px 4px rgba(128, 128, 128, 0.3);
+}
+
+.black-figure {
+  color: black;
+  text-shadow: 0 0 15px rgba(190, 190, 190, 0.5), 0 0 10px rgba(190, 190, 190, 0.5), 2px 2px 4px rgba(190, 190, 190, 0.5);
 }
 /*# sourceMappingURL=main.css.map */

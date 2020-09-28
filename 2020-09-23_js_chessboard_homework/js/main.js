@@ -9,10 +9,10 @@ let cellsElementsArray = [];        // массив объектов-html для
 class King{
     constructor(color, position){
         if(color == "w"){
-            this.htmlCode = "&#9812;";
+            this.htmlCode = `<div class="white-figure">&#9818;</div>`;
         }
         if(color == "b"){
-            this.htmlCode = "&#9818;";
+            this.htmlCode = `<div class="black-figure">&#9818;</div>`;
         }
         // this.currentPosition = position;
     }
@@ -20,10 +20,10 @@ class King{
 class Queen{
     constructor(color, position){
         if(color == "w"){
-            this.htmlCode = "&#9813;";
+            this.htmlCode = `<div class="white-figure">&#9819;</div>`;
         }
         if(color == "b"){
-            this.htmlCode = "&#9819;";
+            this.htmlCode = `<div class="black-figure">&#9819;</div>`;
         }
         // this.currentPosition = position;
     }
@@ -31,10 +31,10 @@ class Queen{
 class Rook{
     constructor(color, position){
         if(color == "w"){
-            this.htmlCode = "&#9814;";
+            this.htmlCode = `<div class="white-figure">&#9820;</div>`;
         }
         if(color == "b"){
-            this.htmlCode = "&#9820;";
+            this.htmlCode = `<div class="black-figure">&#9820;</div>`;
         }
         // this.currentPosition = position;
     }
@@ -42,10 +42,10 @@ class Rook{
 class Bishop{
     constructor(color, position){
         if(color == "w"){
-            this.htmlCode = "&#9815;";
+            this.htmlCode = `<div class="white-figure">&#9821;</div>`;
         }
         if(color == "b"){
-            this.htmlCode = "&#9821;";
+            this.htmlCode = `<div class="black-figure">&#9821;</div>`;
         }
         // this.currentPosition = position;
     }
@@ -53,10 +53,10 @@ class Bishop{
 class Knight{
     constructor(color, position){
         if(color == "w"){
-            this.htmlCode = "&#9816;";
+            this.htmlCode = `<div class="white-figure">&#9822;</div>`;
         }
         if(color == "b"){
-            this.htmlCode = "&#9822;";
+            this.htmlCode = `<div class="black-figure">&#9822;</div>`;
         }
         // this.currentPosition = position;
     }
@@ -64,10 +64,10 @@ class Knight{
 class Pawn{
     constructor(color, position){
         if(color == "w"){
-            this.htmlCode = "&#9817;";
+            this.htmlCode = `<div class="white-figure">&#9823;</div>`;
         }
         if(color == "b"){
-            this.htmlCode = "&#9823;";
+            this.htmlCode = `<div class="black-figure">&#9823;</div>`;
         }
         // this.currentPosition = position;
     }
