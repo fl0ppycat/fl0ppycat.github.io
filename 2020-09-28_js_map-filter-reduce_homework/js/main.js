@@ -3,6 +3,8 @@ const ARRAY = [5, 23, -110, 3, 18, 0, 14];
 
 console.log(`Исходный массив: ${ARRAY}`);
 
+console.log(``);
+
 //  a. Вывести в консоль только нечетные числа
 
 let arrayA = ARRAY.filter((item) => {  
@@ -40,20 +42,20 @@ console.log(`d. Сумма остатков % 3: ${d}`);
 
 // e. Проверить, и вывести в консоль результат проверки, есть ли в массиве числа, кратные 5. 
 
-let e = ARRAY.reduce((check,item,index) =>{
-  if( ((item % 5) == 0) && (item != 0) ){
-    check++;
-  };
-  return(check);
-},0); 
+let arrayE = ARRAY.map((item) => {
+  let temp = String(item);
+  let tempLength = temp.length;
+  let foundFive = temp.includes("5",(tempLength-1));
+  let foundZero = temp.includes("0",(tempLength-1));
+  return(foundFive || foundZero);
+});
 
-console.log(`e. Числа, кратные 5, в массиве ${(e <= 0) ? "отсутствуют" : "присутствуют"}`);
+console.log(`e. Кратность пяти: ${arrayE}`);
 
 // f. Получить массив без первого элемента, вывести в консоль.
 
-let arrayF = ARRAY.filter((item,index) => {
-  if(index > 0){return (item);}
-});
+let arrayF = ARRAY;
+arrayF.shift();
 
 console.log(`f. Без первого элемента: ${arrayF}`);
 
@@ -64,6 +66,8 @@ arrayG = ARRAY.sort();
 console.log(`g. Сортировка по возрастанию: ${arrayG}`);
 
 // функцию, которая преобразовывает значения, записанные через дефис в значения, записанные в camelCase
+
+console.log(``);
 
 toCamelCase = (string) => {  
   let array = string.split('-');
