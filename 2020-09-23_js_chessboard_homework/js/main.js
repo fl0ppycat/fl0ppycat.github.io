@@ -158,8 +158,8 @@ initialize = () => {
             //собираем <div>-строку следующей клетки
             str = `<div id="${id}" class="cell"`; // добавляем id, класс "cell" всем ячейкам
             if( ((i + j) % 2) == 0){ //красим чётные клетки
-                str = `${str} style="background-color: grey;"></div>`;} else {
-                    str = `${str}></div>`; //не красим нечётные
+                str = `${str} style="background-color: #7a4e32;"></div>`;} else {
+                    str = `${str} style="background-color: #d4b583;"></div>`; //красим нечётные
             }
 
             //добавляем получившуюся клетку к уже имеющимся
