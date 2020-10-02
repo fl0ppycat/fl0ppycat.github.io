@@ -6,7 +6,7 @@ bodyElement[0].appendChild(divControls);
 
 let divTrainElement = document.createElement("div");
 divTrainElement.classList.add('train');
-divTrainElement.innerHTML = `<img src="../images/train4.png"></img>`
+divTrainElement.innerHTML = `<img src="./images/train4.png"></img>`
 
 let divRailElement = document.createElement("div");
 divRailElement.classList.add('rail');
