@@ -66,7 +66,7 @@ let eventListener = document.addEventListener('keydown', (event) => {
       moveFunction(divTrainElement,false);
       break;
     }
-    case "Space":{
+    case "KeyF":{
         divLightElement.classList.toggle("light");
         break;
     }
