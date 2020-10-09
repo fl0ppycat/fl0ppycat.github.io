@@ -73,3 +73,22 @@ arrayPrinter = (array) => {
 }
 
 arrayPrinter(someArray);
+
+// 5) нарисуй 4 кнопки-стрелки: "вверх", "вниз", "влево", "вправо"
+
+let bodyEl = document.getElementsByTagName("body");
+
+let buttonLeftEl = document.createElement("button");
+buttonLeftEl.innerHTML = `&#8592;`;
+bodyEl[0].appendChild(buttonLeftEl);
+let buttonUpEl = document.createElement("button");
+buttonUpEl.innerHTML = `&#8593;`;
+bodyEl[0].appendChild(buttonUpEl);
+let buttonDownEl = document.createElement("button");
+buttonDownEl.innerHTML = `&#8595;`;
+bodyEl[0].appendChild(buttonDownEl);
+let buttonRightEl = document.createElement("button");
+buttonRightEl.innerHTML = `&#8594;`;
+bodyEl[0].appendChild(buttonRightEl);
+
+
