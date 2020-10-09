@@ -1,0 +1,27 @@
+body {
+  background-color: gray;
+}
+
+.button {
+  height: 60px;
+  width: 300px;
+  font-family: 'Segoe UI';
+  font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+}
+
+.hidden {
+  visibility: hidden;
+}
+/*# sourceMappingURL=main.css.map */

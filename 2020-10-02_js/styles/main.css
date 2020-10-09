@@ -1,0 +1,32 @@
+.main {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 200px;
+  width: 300px;
+  border: 1px solid black;
+}
+
+.ball {
+  position: relative;
+  left: 135px;
+  top: 85px;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -webkit-transition-property: left;
+  transition-property: left;
+  -webkit-transition-duration: 10s;
+          transition-duration: 10s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
+.btn {
+  height: 30px;
+  width: 70px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 3px;
+}
+/*# sourceMappingURL=main.css.map */
