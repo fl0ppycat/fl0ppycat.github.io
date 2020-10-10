@@ -27,6 +27,10 @@ button{
   margin: 15px;
 }
 
-.selected{
-  background-color:#bebebe;
+.one{
+  background-color: blue;
+}
+
+.two{
+  background-color: orange;
 }

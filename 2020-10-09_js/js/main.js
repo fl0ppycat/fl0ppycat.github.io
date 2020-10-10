@@ -66,13 +66,14 @@ arrayPrinter = (array) => {
             let classString = `class="cell"`;
             if(array[i][j] != null){
                 counter++
-                classString = `class="cell selected"`
+                if(array[i][j] === "1"){ classString = `class="cell one"` }
+                if(array[i][j] === "2"){ classString = `class="cell two"` }
             };
             mainDivEl.innerHTML = `${mainDivEl.innerHTML}<div ${classString}></div>`;
         }
     }
 
-    // bodyEl[0].innerHTML = `${bodyEl[0].innerHTML}<div class="counter">Found ${counter} not null cells</div>`; 
+    mainDivEl.innerHTML = `${mainDivEl.innerHTML}<div class="counter">Found ${notNullCounter(array)} not null cells</div>`; 
 }
 
 // arrayPrinter(someArray);
@@ -104,7 +105,7 @@ someArray[x][y] = "1";
 arrayPrinter(someArray);
 
 moveFunction = (yMove,xMove) => {
-    someArray[x][y] = null;
+    someArray[x][y] = "2";
     x = x + xMove;
     y = y + yMove;
     someArray[x][y] = "1";
