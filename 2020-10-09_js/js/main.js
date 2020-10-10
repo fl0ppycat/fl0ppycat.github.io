@@ -128,5 +128,26 @@ buttonRightEl.addEventListener('click', eventListener => {
 });
 
 
-
+let eventListener = document.addEventListener('keydown', (event) => {
+    switch(event.code){
+      case "ArrowRight":{ 
+        moveFunction(1,0);
+        break;
+      }
+      case "ArrowLeft":{
+        moveFunction(-1,0);
+        break;
+      }
+      case "ArrowUp":{
+        moveFunction(0,-1);
+        break;
+      }
+      case "ArrowDown":{
+        moveFunction(0,1);
+        break;
+      }
+      default:
+        console.log(`Something goes wrong in keydown event listener. event.code: ${event.code}, event.key: ${event.key}`);
+    }
+  })
 
