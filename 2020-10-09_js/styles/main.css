@@ -11,6 +11,9 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   margin: 15px;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .cell{
@@ -33,4 +36,13 @@ button{
 
 .two{
   background-color: orange;
+}
+
+.fail{
+  position: absolute;
+  color: darkred;
+  font-family: 'Segoe UI';
+  font-size: 3rem;
+  font-weight: 800;
+  word-wrap: normal;
 }
