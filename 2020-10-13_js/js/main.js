@@ -6,7 +6,7 @@ but1El.addEventListener('click', eventListener => {
     // but2El.classList.toggle("disabled");
     but2El.disabled = !but2El.disabled;
 
-    if(but2El.classList.contains("hidden")){
+    if(!but2El.classList.contains("hidden")){
         divHelloEl.classList.add("hidden");
     }
 });
