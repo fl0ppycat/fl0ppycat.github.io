@@ -3,7 +3,9 @@ let but2El = document.querySelector(".btn2");
 let divHelloEl = document.querySelector(".hello");
 
 but1El.addEventListener('click', eventListener => {
-    but2El.classList.toggle("hidden");
+    // but2El.classList.toggle("disabled");
+    but2El.disabled = !but2El.disabled;
+
     if(but2El.classList.contains("hidden")){
         divHelloEl.classList.add("hidden");
     }
