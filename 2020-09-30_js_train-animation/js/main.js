@@ -6,6 +6,7 @@ bodyElement[0].appendChild(divControls);
 
 let divTrainElement = document.createElement("div");
 divTrainElement.classList.add('train');
+divTrainElement.classList.add('moveLeft');
 divTrainElement.innerHTML = `<img src="./images/train4.png"></img>`
 
 let divRailElement = document.createElement("div");
@@ -44,16 +45,15 @@ buttonLightElment.addEventListener('click', eventListener => {
 });
 
 
-let nextPosition = "0px";
 let currentDirection = false;
 
 moveFunction = (element,nextDirection) => {
-  nextPosition = `${(nextDirection) ? (parseInt(nextPosition) + 2) : (parseInt(nextPosition) - 2)}px`;
   if (nextDirection != currentDirection){
+    divTrainElement.classList.toggle("moveRight");
+    divTrainElement.classList.toggle("moveLeft");
     divTrainElement.classList.toggle("flip");
     currentDirection = nextDirection;
   }      
-  element.style.left = nextPosition;
 }
 
 let eventListener = document.addEventListener('keydown', (event) => {
@@ -74,55 +74,3 @@ let eventListener = document.addEventListener('keydown', (event) => {
       console.log(`event.code: ${event.code}, event.key: ${event.key}`);
   }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let divTrainElementsArray = [];
-
-// for (let i = 0; i < 4; i++){
-//   divTrainElementsArray.push(document.createElement("div"));
-//   divTrainElementsArray[i].classList.add('border-size');
-//   divTrainElementsArray[i].classList.add('blue');  
-//   bodyElement[0].appendChild(divTrainElementsArray[i]);
-//   //// divTrainElementsArray[i].addEventListener('mousedown', e => {
-//   ////   e.target.classList.add("red")
-//   //// });
-//   //// divTrainElementsArray[i].addEventListener('mouseup', e => {
-//   ////   e.target.classList.remove("red")
-//   //// });
-
-//   divTrainElementsArray[i].addEventListener('click', eventListener => {
-//     eventListener.target.classList.toggle("red")
-//   });
-
- 
-// }
-
-// let el = document.addEventListener('keydown', (event) => {
-//   console.log(event.code, event.key);
-// })
-

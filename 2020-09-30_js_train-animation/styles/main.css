@@ -17,6 +17,15 @@ body{
   height: 130px;
   position: absolute;
   box-sizing: border-box;
+  transition: left 3s;
+}
+
+.moveRight{
+  left: 75vw;
+}
+
+.moveLeft{
+  left: 10vw;
 }
 
 .flip {
