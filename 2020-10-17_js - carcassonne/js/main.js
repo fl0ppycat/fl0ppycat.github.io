@@ -15,8 +15,7 @@ arrayCreator = (n) => {
 }
 
 let board = arrayCreator(8);
-
-// console.table(board);
+console.table(board);
 
 boardPrinter = (array) => {
     boardDivEl.innerHTML = "";
@@ -49,7 +48,7 @@ const TILES_TYPES = ["corner", "impasse", "stick"]
 const TILES_OF_EACH_TYPE_COUNT = 10;
 
 
-
+//создает стак по 10 карт каждого из 3х типов в случайной последовательности
 stackCreator = (typesCount, tilesCount) => {
     let array = [];
     for (let i = 0; i < typesCount; i++){
@@ -117,6 +116,7 @@ tileSpawner = (id) => {
     board[splittedId[1]][splittedId[2]] = stack.pop();
 
     boardPrinter(board);
+    console.table(board);
     tileMarker();
     stackPrinter(stack);
 
