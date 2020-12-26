@@ -1,3 +1,4 @@
+
 body{
   height: 80vh;
   background-color: grey;
@@ -17,15 +18,11 @@ body{
   height: 130px;
   position: absolute;
   box-sizing: border-box;
+  left:5vw;
+}
+
+.move{
   transition: left 3s;
-}
-
-.moveRight{
-  left: 75vw;
-}
-
-.moveLeft{
-  left: 10vw;
 }
 
 .flip {
