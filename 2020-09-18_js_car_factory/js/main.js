@@ -31,13 +31,15 @@ function modelAssemble (colorValue, gearboxValue, conditionValue, interiorValue)
     let model = "" + lastAssembledID;
     model = mask.substring(0, mask.length - model.length) + model;
 
-    for (let i = 0; i < arguments.length; i++){
-        model = `${model}${firstSymbolPicker(arguments[i])}`;
-    }
+    // for (let i = 0; i < arguments.length; i++){
+    //     model = `${model}${firstSymbolPicker(arguments[i])}`;
+    // }
 
+    Array.from(arguments).forEach(function(item) {
+        model = `${model}${firstSymbolPicker(item)}`;
+    });
     return model;
 } 
-
 
 randomModelGenerator = (number) => {
     for (let i = 0; i < number; i++){
