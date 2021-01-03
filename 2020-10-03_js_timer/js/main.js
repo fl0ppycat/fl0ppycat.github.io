@@ -37,11 +37,12 @@ playButtonEl.addEventListener('click', eventListener => {
     }
 
     if(dif < 1) {
-        console.log("cannot start: selected time less than current time");
+        // console.log("cannot start: selected time less than current time");
+        alert("cannot start: selected time less than current time");
         return;
     }
 
-    console.log(`timer will stop after ${Math.round(dif/1000)} seconds`);
+    // console.log(`timer will stop after ${Math.round(dif/1000)} seconds`);
     togglePause();
     
     oneSecondInterval = setInterval(() => {
@@ -56,7 +57,7 @@ playButtonEl.addEventListener('click', eventListener => {
 
         if(dif < 1) {
             clearInterval(oneSecondInterval);
-            console.log("timer stopped");
+            // console.log("timer stopped");
             togglePause();    
         }
     }, 1000);     
