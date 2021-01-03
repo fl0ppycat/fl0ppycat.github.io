@@ -13,14 +13,19 @@
 <body>
 
     <div class="timer">
+        <button class="pause-button invisible inner-div">ll</button>  
         <button class="play-button inner-div">&#xe800;</button>  
-        <input type="datetime-local" class="time inner-div" >
-
-        <div class="time-text inner-div">00:00  </div>
-        <div class="rotator invisible">&#8635;</div>
+        <input type="datetime-local" value="2021-01-01T01:01" class="time inner-div" >
+        <div class="time-text inner-div">  </div>
+        <div class="rotator-wrap inner-div">
+            <div class="rotator invisible">&#8635;</div>
+        </div>
     </div>
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
+
+
 
 </body>
 </html>

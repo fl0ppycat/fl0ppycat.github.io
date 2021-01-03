@@ -59,23 +59,40 @@ let bodyEl = document.getElementsByTagName("body");
 let mainDivEl = document.querySelector('.main');
 
 arrayPrinter = (array) => {
+
     mainDivEl.innerHTML = "";
+
+    // for (let i = 0; i < array.length; i++){
+    //     for (let j = 0; j < array.length; j++){
+    //         let classString = `class="cell"`;
+    //         if(array[i][j] != null){
+    //             if(array[i][j] === "1"){ classString = `class="cell one"` }
+    //             if(array[i][j] === "2"){ classString = `class="cell two"` }
+    //         };
+    //         mainDivEl.innerHTML = `${mainDivEl.innerHTML}<div ${classString}></div>`;
+    //     }
+    // }
+
+    // let cellsHtmlCollection = document.getElementsByClassName('cell');
+    // let cellsArr = Array.from(cellsHtmlCollection);
+    // cellsArr.forEach((element) => {
+    //     mainDivEl.removeChild(element);
+    // })
 
     for (let i = 0; i < array.length; i++){
         for (let j = 0; j < array.length; j++){
-            let classString = `class="cell"`;
+            let divCellEl = document.createElement("div");
+            divCellEl.classList.add('cell');
             if(array[i][j] != null){
-                if(array[i][j] === "1"){ classString = `class="cell one"` }
-                if(array[i][j] === "2"){ classString = `class="cell two"` }
+                if(array[i][j] === "1"){ divCellEl.classList.add('one'); }
+                if(array[i][j] === "2"){ divCellEl.classList.add('two'); }
             };
-            mainDivEl.innerHTML = `${mainDivEl.innerHTML}<div ${classString}></div>`;
+            mainDivEl.appendChild(divCellEl);
         }
     }
+
     mainDivEl.innerHTML = `${mainDivEl.innerHTML}<div class="counter">Found ${notNullCounter(array)} not null cells</div>`; 
 }
-
-// arrayPrinter(someArray);
-
 
 
 moveDifs = [];

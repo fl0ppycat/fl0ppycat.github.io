@@ -42,8 +42,8 @@ body {
 
 .timer {
   position: relative;
-  width: 300px;
-  height: 150px;
+  width: 400px;
+  height: 180px;
   border: 2px solid darkgrey;
   margin: 100px auto;
   padding: 15px;
@@ -64,10 +64,21 @@ body {
 }
 
 .time-text {
+  width: 280px;
+  height: 84px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 72px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .rotator {
@@ -78,22 +89,9 @@ body {
           animation: spin 2s infinite linear;
 }
 
-.invisible {
-  visibility: hidden;
-}
-
-.time {
-  font-size: 24px;
-  -webkit-box-ordinal-group: 4;
-      -ms-flex-order: 3;
-          order: 3;
-}
-
-.play-button {
-  height: 60px;
-  width: 100px;
-  font-family: 'fontello';
-  font-size: 24px;
+.rotator-wrap {
+  height: 84px;
+  width: 72px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,8 +101,53 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.invisible {
+  display: none;
+}
+
+.time {
+  font-size: 22px;
+  font-family: 'Roboto', sans-serif;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  width: 305px;
+  height: 84px;
+}
+
+.play-button {
+  height: 86px;
+  width: 72px;
+  font-family: 'fontello';
+  font-size: 24px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-ordinal-group: 5;
       -ms-flex-order: 4;
           order: 4;
+}
+
+.pause-button {
+  height: 86px;
+  width: 72px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-ordinal-group: 6;
+      -ms-flex-order: 5;
+          order: 5;
 }
 /*# sourceMappingURL=main.css.map */
