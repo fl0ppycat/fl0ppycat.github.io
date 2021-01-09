@@ -104,7 +104,7 @@ addEventListeners = () => {
                 element.style.border =  "2px solid darkgreen";
                 element.querySelector(".free").classList.remove("invisible");
             } else{
-                // console.log("not occupied");
+                //display modal window
                 document.querySelector(".pop-up").style.display = "flex";
             }
         });
@@ -125,16 +125,11 @@ oneSecondInterval = setInterval(() => {
             element.querySelector(".occupied").classList.add("invisible");
             element.style.border =  "2px solid darkgreen";
             element.querySelector(".free").classList.remove("invisible");
-            
         }
         //recalc free and nonfree places:
         freePlacesDivEl.innerHTML = `${freePlaces(parking)}`;
         occupiedCounterDivEl.innerHTML = `${parking.length - freePlaces(parking)}`;
         //redraw time to release:
         element.querySelector(".occupied").innerHTML = `<span class="gray">will be released throught</span> <br> <b>${parking[index].time.format("mm:ss")}</b>`;
-    });
-
-    // parkingDivEl.innerHTML = "";
-    // parkingRender();
-    
+    });    
 }, 100);   
