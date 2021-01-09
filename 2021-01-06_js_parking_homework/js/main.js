@@ -7,10 +7,10 @@ let controlsDivEl = document.querySelector(".controls");
 let startDate = moment();
 
 class parkingPlace{
-    constructor(id,occupied,releaseTime){
+    constructor(id,occupied,time){
         this.id = id;
         this.occupied = occupied;
-        this.releaseTime = releaseTime;
+        this.time = time;
     }
 }
 
@@ -25,9 +25,7 @@ parkingArrayCreator = (n) => {
         for (let i = 0; i < n; i++){
             array[i] = new parkingPlace(i+1,Boolean(getRandomInt(0,2)),moment(0));
             if (array[i].occupied) {
-                let randomReleaseTime = moment(0);
-                randomReleaseTime.add(0, 'hour').add(0, 'minute').add(getRandomInt(1,30), 'second');
-                array[i].releaseTime = randomReleaseTime;
+                array[i].time = moment(0).add(getRandomInt(1,30), 'second');
             }
         }
     return array;
@@ -38,32 +36,21 @@ let parking = parkingArrayCreator(PLACES);
 // console.table(parking);
 // console.log("");
 
-occupiedCounter = () => {
+const freePlaces = (arr) => {
     let sum = 0;
-    parking.forEach(function(element, index) {
-        if (element.occupied) {sum++};
+    arr.forEach(function(element) {
+        if (!element.occupied) {sum = sum + 1};
     });
     return(sum);
 }
 
-    // let currentTimeDivEl = document.createElement("div");
-    // currentTimeDivEl.classList.add("current_time");
-    //     let timeOutputDivEl = document.createElement("div");
-    //     timeOutputDivEl.classList.add("time_output");
+timeOutputDivEl = document.querySelector(".current-time");
+timeOutputDivEl.innerHTML = `00:00:00`;
 
-    timeOutputDivEl = document.querySelector(".time_output");
-    timeOutputDivEl.innerHTML = `00:00:00`;
-
-    // timeOutputDivEl.innerHTML = `${startDate.format("HH:mm:ss")}`;
-
-//     currentTimeDivEl.append(timeOutputDivEl);
-// controlsDivEl.append(currentTimeDivEl);
-
-let occupiedCounterDivEl = Array.from(document.querySelectorAll(".places_output"))[0];
-let freeCounterDivEl = Array.from(document.querySelectorAll(".places_output"))[1];
-occupiedCounterDivEl.innerHTML = `${occupiedCounter()}`;
-freeCounterDivEl.innerHTML = `${parking.length - occupiedCounter()}`;
-
+let freePlacesDivEl = document.querySelector(".free-spaces");
+let occupiedCounterDivEl = document.querySelector(".occupied-spaces");
+freePlacesDivEl.innerHTML = `${freePlaces(parking)}`;
+occupiedCounterDivEl.innerHTML = `${parking.length - freePlaces(parking)}`;
 
 parkingRender = () => {
     parking.forEach(function(element, index) {
@@ -81,7 +68,6 @@ parkingRender = () => {
             tempOccupiedDivEl.classList.add("occupied");
                 let tempReleaseDivEl = document.createElement("div");
                 tempReleaseDivEl.classList.add("release_throught");
-                // tempReleaseDivEl.innerHTML = `<span class="gray">will be released throught</span> <br> <b>${element.releaseTime.format("mm:ss")}</b>`;
                 tempReleaseDivEl.innerHTML = `<span>occupied</span>`;          
                 tempOccupiedDivEl.append(tempReleaseDivEl);   
 
@@ -92,15 +78,20 @@ parkingRender = () => {
         
         if (element.occupied) {
             tempFreeDivEl.classList.add("invisible");
-            tempParkPlaceDivEl.style.border =  "2px solid darkred"
+            tempParkPlaceDivEl.style.border = "2px solid darkred"
         } else {tempOccupiedDivEl.classList.add("invisible");
-                tempParkPlaceDivEl.style.border =  "2px solid darkgreen"
+                tempParkPlaceDivEl.style.border = "2px solid darkgreen"
         }
         parkingDivEl.append(tempParkPlaceDivEl);
     });
 }
 
 parkingRender();
+
+let modalDivEl = document.querySelector(".pop-up");
+modalDivEl.addEventListener('click', eventListener => {
+    eventListener.target.style.display = "none";
+});
 
 addEventListeners = () => {
     Array.from(document.querySelectorAll(".parking_place")).forEach(function(element, i) {
@@ -113,7 +104,8 @@ addEventListeners = () => {
                 element.style.border =  "2px solid darkgreen";
                 element.querySelector(".free").classList.remove("invisible");
             } else{
-                console.log("not occupied");
+                // console.log("not occupied");
+                document.querySelector(".pop-up").style.display = "flex";
             }
         });
     });
@@ -122,25 +114,27 @@ addEventListeners = () => {
 addEventListeners();
 
 oneSecondInterval = setInterval(() => {
-    timeOutputDivEl.innerHTML = `${startDate.add(1, "second").format("HH:mm:ss")}`;
+    timeOutputDivEl.innerHTML = `${startDate.add(-100, "milliseconds").format("HH:mm:ss")}`;
 
     Array.from(document.querySelectorAll(".parking_place")).forEach(function(element, index) {
-        parking[index].releaseTime.add(-1, "second");
+        parking[index].time.add(-100, "milliseconds");
 
-        if(new Date((parking[index].releaseTime)).getTime() == 0) {
+        if(new Date((parking[index].time)).getTime() == 0) {
             //set parking place free:
             parking[index].occupied = false;
             element.querySelector(".occupied").classList.add("invisible");
             element.style.border =  "2px solid darkgreen";
             element.querySelector(".free").classList.remove("invisible");
-            //recalc free and nonfree places:
-            occupiedCounterDivEl.innerHTML = `${occupiedCounter()}`;
-            freeCounterDivEl.innerHTML = `${parking.length - occupiedCounter()}`;
+            
         }
-        element.querySelector(".occupied").innerHTML = `<span class="gray">will be released throught</span> <br> <b>${parking[index].releaseTime.format("mm:ss")}</b>`;
+        //recalc free and nonfree places:
+        freePlacesDivEl.innerHTML = `${freePlaces(parking)}`;
+        occupiedCounterDivEl.innerHTML = `${parking.length - freePlaces(parking)}`;
+        //redraw time to release:
+        element.querySelector(".occupied").innerHTML = `<span class="gray">will be released throught</span> <br> <b>${parking[index].time.format("mm:ss")}</b>`;
     });
 
     // parkingDivEl.innerHTML = "";
     // parkingRender();
     
-}, 1000);   
+}, 100);   

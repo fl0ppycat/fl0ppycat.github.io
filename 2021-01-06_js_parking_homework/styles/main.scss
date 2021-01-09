@@ -6,7 +6,7 @@ body{
 
 .main{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content:space-around;
   flex-wrap: nowrap;
   // border: 2px solid green;
@@ -14,8 +14,7 @@ body{
 
 .parking{
   min-width: 330px;
-  max-width: 70vw;
-
+  // max-width: 70vw;
 
   position: relative;
   border: 2px solid  black;
@@ -25,7 +24,6 @@ body{
   flex-wrap: wrap;
   align-content: space-between;
   justify-content: center;
-
   // border-radius: 20px;
 }    
 
@@ -67,13 +65,12 @@ body{
   position: absolute;
   top: 60px;
   background-color: #bebebe;
-
   // z-index: 1;
   // border: 2px solid darkgreen;
 }
 
 .controls{
-  width: 150px;
+  min-width: 380px;
   position: relative;
   margin: 10px;
   background-color:#bebebe;
@@ -81,15 +78,32 @@ body{
   font-size: 22px;
   padding: 10px;
   display: flex;
-  flex-direction:column;
-  justify-content: start;
+  flex-direction:row;
+  // justify-content: start;
+  // align-content: space-around;
 }
 
-// .current_time, .places_info{
-//   border: 2px solid blue;
+
+// .places_info{
+//   padding-left:20px;
+//   display:flex;
+//   flex-direction: row;
+//   // flex-wrap: wrap;
+//   justify-content: space-between;
+//   align-content: space-between;
 // }
 
-.time_output, .places_output{
+.occupied-spaces, .free-spaces{
+  // margin: 10px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.gdshgfshs{
+  padding-left:40px;
+}
+
+.current-time, .places_output{
   font-size: 36px;
   font-weight: bold;
 }
@@ -102,6 +116,24 @@ body{
   display: none;
 }
 
-// .pop-up{
+.visible{
+  display: flex;
+}
 
-// }
+.pop-up{
+  position: fixed;
+  width: 70vw;
+  height: 70vh;
+  border: 2px solid gray;
+  background-color: rgb(60, 60, 60);
+ 
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display:none;
+}
