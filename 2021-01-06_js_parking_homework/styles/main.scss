@@ -1,0 +1,107 @@
+
+body{
+    background-color: gray;
+    padding: 10px;
+}
+
+.main{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  flex-wrap: nowrap;
+  // border: 2px solid green;
+}
+
+.parking{
+  min-width: 330px;
+  max-width: 70vw;
+
+
+  position: relative;
+  border: 2px solid  black;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: center;
+
+  // border-radius: 20px;
+}    
+
+.parking_place{
+  width: 75px;
+  height: 100px;
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid black;
+  margin: 15px;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color:#bebebe;
+  border-radius: 5px;
+}
+
+.id{
+  font-size: 22px;
+  font-weight: bold;
+}
+
+// .release_throught{
+//   font-size: 14px;
+//   text-align: center;
+// }
+
+.occupied{
+  font-size: 14px;
+  text-align: center;
+  // border: 2px solid darkred;
+}
+
+.free{
+  position: absolute;
+  top: 60px;
+  background-color: #bebebe;
+
+  // z-index: 1;
+  // border: 2px solid darkgreen;
+}
+
+.controls{
+  width: 150px;
+  position: relative;
+  margin: 10px;
+  background-color:#bebebe;
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  padding: 10px;
+  display: flex;
+  flex-direction:column;
+  justify-content: start;
+}
+
+// .current_time, .places_info{
+//   border: 2px solid blue;
+// }
+
+.time_output, .places_output{
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.gray{
+  opacity: 40%;
+}
+
+.invisible{
+  display: none;
+}
+
+// .pop-up{
+
+// }

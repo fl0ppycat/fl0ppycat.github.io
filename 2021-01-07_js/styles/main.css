@@ -1,0 +1,29 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: gray;
+  padding: 0px;
+}
+
+.status {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  height: 10vh;
+  width: 100vw;
+  border: 2px solid red;
+  background-color: darkred;
+  color: white;
+}
+
+.main {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid green;
+  background-color: darkgreen;
+  height: 100%;
+  color: white;
+}
+/*# sourceMappingURL=main.css.map */

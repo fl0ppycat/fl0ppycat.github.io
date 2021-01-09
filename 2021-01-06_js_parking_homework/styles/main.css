@@ -1,0 +1,118 @@
+body {
+  background-color: gray;
+  padding: 10px;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.parking {
+  min-width: 330px;
+  max-width: 70vw;
+  position: relative;
+  border: 2px solid  black;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.parking_place {
+  width: 75px;
+  height: 100px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid black;
+  margin: 15px;
+  padding: 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: #bebebe;
+  border-radius: 5px;
+}
+
+.id {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.occupied {
+  font-size: 14px;
+  text-align: center;
+}
+
+.free {
+  position: absolute;
+  top: 60px;
+  background-color: #bebebe;
+}
+
+.controls {
+  width: 150px;
+  position: relative;
+  margin: 10px;
+  background-color: #bebebe;
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.time_output, .places_output {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.gray {
+  opacity: 40%;
+}
+
+.invisible {
+  display: none;
+}
+/*# sourceMappingURL=main.css.map */

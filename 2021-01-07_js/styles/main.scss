@@ -1,0 +1,92 @@
+html,body{
+  height:100%;
+}
+
+body{
+    background-color: gray;
+    padding: 0px;
+}
+.status{
+  box-sizing: border-box;
+  position: relative;
+  height: 10vh;
+  width: 100vw;
+  border: 2px solid red;
+  background-color: darkred;
+  color: white;
+}   
+
+height: calc(var(--variable-width) + 20px);
+
+.main{
+  box-sizing: border-box;
+  border: 2px solid green;
+  background-color: darkgreen;
+  height: 100%;
+  color: white;
+}
+
+ 
+
+// .parking_place{
+//   width: 75px;
+//   height: 100px;
+//   position: relative;
+//   box-sizing: border-box;
+//   border: 1px solid black;
+//   margin: 15px;
+//   padding: 5px 10px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-between;
+//   font-family: 'Roboto', sans-serif;
+//   font-size: 16px;
+//   background-color:#bebebe;
+//   border-radius: 5px;
+// }
+
+// .id{
+//   font-size: 22px;
+//   font-weight: bold;
+// }
+
+// .release_throught{
+//   font-size: 14px;
+//   text-align: center;
+// }
+
+
+// .controls{
+//   max-width: 250px;
+//   position: relative;
+//   margin: 10px;
+//   background-color:#bebebe;
+//   font-family: 'Roboto', sans-serif;
+//   font-size: 22px;
+//   padding: 10px;
+//   display: flex;
+//   flex-direction:column;
+//   justify-content: start;
+// }
+
+// // .current_time, .places_info{
+// //   border: 2px solid blue;
+// // }
+
+// .time_output, .places_output{
+//   font-size: 36px;
+//   font-weight: bold;
+// }
+
+// .gray{
+//   opacity: 40%;
+// }
+
+// .invisible{
+//   display: none;
+// }
+
+// .pop-up{
+
+// }
