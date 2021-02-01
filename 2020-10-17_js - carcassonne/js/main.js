@@ -22,6 +22,7 @@ boardPrinter = (array) => {
             } else {
             boardDivEl.innerHTML = `${boardDivEl.innerHTML}<div class="tile ${board[i][j].tileType}" id="tile-${i}-${j}" style="transform: rotate(${board[i][j].rotationDegree}deg)"></div>`;
             }
+            // if(board[i][j].wrongPosition){boardDivEl.}
         }
     }
 }
@@ -71,12 +72,45 @@ stackCreator = (typesCount, tilesCount) => {
 stackDivEl = document.querySelector(".stack");
 let stack = stackCreator(TILES_TYPES.length, TILES_OF_EACH_TYPE_COUNT);
 
-
 stackPrinter = (array) => {
     stackDivEl.innerHTML = "";
     for (let i = 0; i < array.length; i++){
         stackDivEl.innerHTML = `${stackDivEl.innerHTML}<div class="tile ${stack[i].tileType}" id="tile-${stack[i].id}"></div>`;   /*<div ${classString}></div>`;*/
     }
+}
+
+moveDifs = [];
+moveDifs[0] = new Array(0,-1);
+moveDifs[1] = new Array(1,0);
+moveDifs[2] = new Array(0,1);
+moveDifs[3] = new Array(-1,0);
+
+checkOneDirection = (x, y, difX, difY) => { 
+    console.log("");
+    // console.log("x=" + x + "    " + "y=" + y + "    " + "difX=" + difX + "    " + "difY=" + difY + "    "  ); 
+    // console.log("y+difY = " + (Number(y)+difY)); 
+ 
+    if  ( ( ((y+difY) < 0) || ((x+difX) < 0) ) || ( ((y+difY) > 7) || ((x+difX) > 7) ) ) {
+        return(false)
+    }
+    else {
+        if( (board[(x+difX)][(y+difY)]) != null) {
+            return(false)
+            }
+            else {
+                return(true)
+            }
+    }
+} 
+
+//проверяет, что происходит вокруг тайла с координатами x, y 
+checkAllDirections = (y, x) => { 
+    let directionsArr = new Array(4); 
+    for(let i=0; i<4; i++){
+        directionsArr[i] = checkOneDirection(Number(x), Number(y), moveDifs[i][0], moveDifs[i][1]);
+    }
+
+    return(directionsArr);  
 }
 
 //поворот тайла на 90 градусов по клику
@@ -85,17 +119,15 @@ tileRotate = (tileObject,degree) => {
     board[splittedId[1]][splittedId[2]].rotationDegree = board[splittedId[1]][splittedId[2]].rotationDegree + degree;
     tileObject.style.transform = 'rotate(' + board[splittedId[1]][splittedId[2]].rotationDegree + 'deg)';
 
-    board[splittedId[1]][splittedId[2]].sides.push(board[splittedId[1]][splittedId[2]].sides.shift());
-}
+    // board[splittedId[1]][splittedId[2]].sides.push(board[splittedId[1]][splittedId[2]].sides.shift()); // -90
+    board[splittedId[1]][splittedId[2]].sides.unshift(board[splittedId[1]][splittedId[2]].sides.pop());   // +90
 
-//будущая проверка на совпадающие проходы между тайлами
-// sidesIsMatching = (tileObject) => {
-//     // let result;
-//     // for (let i = 0; i < tileObject.sides.length; i++){
-//     //     result = result && (tileObject.sides[i] &&
-//     // }
-//     return false;
-// }
+    directions = checkAllDirections(splittedId[1],splittedId[2]);
+    if(directions.includes(false)){
+        tileObject.style.border="2px solid red";
+        board[splittedId[1]][splittedId[2]].wrongPosition=true;
+    }
+}
 
 //развешивает event listenerы на все клетки, занятые тайлами
 tileMarker = () => {
@@ -118,6 +150,8 @@ tileSpawner = (id) => {
     tileMarker();
     stackPrinter(stack);
     cellMarker();
+
+    console.table(board);
 
     //будущая проверка на совпадающие проходы между тайлами
     // if ( !sidesIsMatching(id) ){

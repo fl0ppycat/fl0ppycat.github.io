@@ -39,7 +39,7 @@ let parking = parkingArrayCreator(PLACES);
 const freePlaces = (arr) => {
     let sum = 0;
     arr.forEach(function(element) {
-        if (!element.occupied) {sum = sum + 1};
+        if (!element.occupied) {sum += 1};
     });
     return(sum);
 }

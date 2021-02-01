@@ -1,0 +1,48 @@
+body
+  padding: 10px
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  background: #bebebe;
+a
+  color: #00B7FF
+
+
+.month-table
+  width: 220px
+  padding: 10px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  font-weight: bold
+
+.monthTitle
+    margin: 20px
+    text-transform: capitalize
+    font-size: 24px
+    color: gray
+
+.weekDays
+  display: flex
+  margin: 5px
+  color: gray
+
+.numbersGrid
+  width: 210px
+  display: flex
+  flex-wrap: wrap
+
+.day
+  width: 20px
+  height: 20px
+  text-align: center
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  margin: 5px
+
+.day:nth-child(7n-1)
+  color: darkred
+
+.day:nth-child(7n)
+  color: darkred  

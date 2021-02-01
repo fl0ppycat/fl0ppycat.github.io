@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  </head>
+  <body>
+    <div class="month-table">
+
+      <div class="monthTitle">
+        <%= date.locale('ru').format("MMMM yyyy") %>
+      </div>
+
+      <!-- <%= tmpDate.locale('ru') %> -->
+
+      <div class="weekDays">
+        <% for(let i=0;i<7;i++){ %>
+          <div class="day">
+            <%= String(tmpDate.format("dd")).toUpperCase() %>
+          </div>
+          <%tmpDate.add(1, 'd')%>
+        <%}%>
+      </div>
+      
+      <div class="numbersGrid">
+        <% for( let i=1-date.weekday() ; i<date.daysInMonth()+1 ; i++ ){ %>
+              <div class="day"><%= (i>0) ? i : ""%></div>
+        <%}%>
+      </div>
+    </div>
+  </body>
+</html>
