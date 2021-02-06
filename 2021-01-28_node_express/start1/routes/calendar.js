@@ -2,10 +2,6 @@ var moment = require('moment');
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
-  res.render('calendar');  
-});
-
 
 router.get('/:var1/:var2', function(req, res, next) {
   const obj = {
@@ -14,6 +10,11 @@ router.get('/:var1/:var2', function(req, res, next) {
     tmpDate: moment().day(1),
   }
   res.render('calendar', obj);  
+});
+
+router.get('/', function(req, res, next) {
+  // res.render('calendar');  
+  res.redirect(`/${req.params.var1}/${req.params.var2}`);
 });
 
 module.exports = router;
