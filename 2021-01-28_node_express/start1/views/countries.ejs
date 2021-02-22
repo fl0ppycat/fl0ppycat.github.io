@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/countries.css' />
+  </head>
+  <body>
+
+  <div class="main">
+    <form>
+      <% regions.forEach(element => { %>
+        <div class="checks">
+        <input type="radio" id="<%= element %>"
+         name="region">
+        <label style = "text-transform:capitalize;" for="<%= element %>"><%= element %></label>
+      </div>
+      <% }); %>
+      
+      <br>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="countries"></div>
+  </div>
+
+  <script type="text/javascript" src='/javascripts/countries.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  </body>
+</html>

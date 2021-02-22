@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/randomBreed.css' />
+  </head>
+  <body>
+
+    <div class="main">
+
+    <% data.forEach(element => { %>
+      <div class="dog-div" style="background-image: url('<%= element.link %>')"><%= element.breed %></div>
+    <% }); %>
+    
+    </div>
+
+
+
+    <script type="text/javascript" src='/javascripts/randomBreed.js'></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+  </body>
+</html>

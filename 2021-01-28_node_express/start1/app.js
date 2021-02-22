@@ -6,9 +6,13 @@ var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var blogRouter = require('./routes/blog');
-var blogRouter = require('./routes/calendar');
+// var usersRouter = require('./routes/users');
+// var blogRouter = require('./routes/blog');
+// var blogRouter = require('./routes/calendar');
+// var randomBreedRouter = require('./routes/randomBreed');
+// var character = require('./routes/character');
+var countries = require('./routes/countries');
+
 
 
 var app = express();
@@ -30,9 +34,12 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/blog', blogRouter);
-app.use('/calendar', blogRouter);
+// app.use('/users', usersRouter);
+// app.use('/blog', blogRouter);
+// app.use('/calendar', blogRouter);
+// app.use('/random-breed', randomBreedRouter);
+// app.use('/character', character);
+app.use('/countries', countries);
 
 
 // catch 404 and forward to error handler

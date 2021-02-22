@@ -1,0 +1,105 @@
+body {
+  padding: 10px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #bebebe; }
+
+.main{
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: row;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.main {
+  /* border: 2px solid black;
+  margin: 20px;
+  padding: 20px; */
+
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center;
+  align-items: flex-start; */
+}
+
+form {
+  width: 100px;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.checks {
+  margin: 5px;
+  padding: 5px;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+button{
+  justify-self: flex-end;
+  align-self: center;
+}
+
+.flag{
+  max-width: 30px;
+  max-height: 17px;
+}
+
+.countries{
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.country-card{
+  min-width: 200px;
+  min-height: 300px;
+  border: 2px solid purple;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.country-title{
+  position: relative;
+
+  justify-self: center;
+  align-self:flex-start
+}
+
+.cats{
+  /* width: 150px; */
+  /* height: 250px; */
+  border: 2px solid blue;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.cat-card{
+  /* position:relative; */
+  /* width: 150px;
+  height: 250px; */
+  border: 2px solid blue;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
