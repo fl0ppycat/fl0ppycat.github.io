@@ -6,14 +6,10 @@ formEl.addEventListener("submit", function(event){
 
     const selectedRegion = { name: document.querySelector('input[name="region"]:checked').id }
 
-    // console.log(selectedRegion);
-
     axios.post("/countries", selectedRegion)
         .then(r => {
             const countriesArr = r.data
-
             countriesListEl.innerHTML = "";
-
             console.log(countriesArr);
 
             countriesArr.forEach(element => {
@@ -31,6 +27,6 @@ formEl.addEventListener("submit", function(event){
                 countriesListEl.innerHTML += `</div>`;
             });
         })
-        // .catch(err => countriesListEl.innerHTML = `${err}` )
+        .catch(err => countriesListEl.innerHTML = `${err}` )
         
 })

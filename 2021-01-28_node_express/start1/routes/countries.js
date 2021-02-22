@@ -6,23 +6,6 @@ var router = express.Router();
 
 router.get('/', async function(req, res) {
   const regionsNameArr = new Array("africa", "americas", "asia", "oceania", "europe");
-  // const regionPromisesArr = regionsNameArr.map( (element) => {
-  //   return axios.get(`https://restcountries.eu/rest/v2/region/${element}`);
-  // });    
-  // const regionsObjectsArr = await Promise.all(regionPromisesArr);
-  // const regions = regionsObjectsArr.map(element => {
-
-  //   const arr = new Array;
-  //   element.data.forEach(element => {
-  //     arr.push(element.name)
-  //   });
-
-  //   const regionObj = new Object;
-  //   regionObj.name = element.config.url.substr(element.config.url.lastIndexOf("/")+1);
-  //   regionObj.countriesArr = arr;
-  //   return(regionObj);
-  // });
-
   res.render('countries', {regions: regionsNameArr});
 });
 
@@ -53,36 +36,16 @@ router.post('/', async function (req, res) {
   countriesArr.map(countryElement => {
     countryElement.cats = new Array;
       catObjectsArr.map(catElement => {
-        // console.log("catElement.code ", catElement.code);
-        // console.log("countryElement.code ", countryElement.code);
-
         if(catElement.code == countryElement.code) {
           countryElement.cats.push(catElement);
         }        
       }); 
     });
 
+  console.log("======================");
+  console.log(countriesArr);
+  console.log("======================");
 
-
-
-  // console.log("======================");
-
-  // countriesArr.forEach(element => {
-  //   console.log("name: ", element.name);
-  //   element.cats.forEach(element =>{
-  //     console.log("cat: ", element.name);
-  //   })
-  // })
-
-// console.log(catObjectsArr);
-// console.log("-----------------------------------");
-
-// console.log(countriesArr);
-  
-  // console.log("======================");
-
-
-  
   res.send(countriesArr);
 });
 
